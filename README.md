@@ -1,0 +1,1 @@
+# partner_contract_pricelist_cgt
