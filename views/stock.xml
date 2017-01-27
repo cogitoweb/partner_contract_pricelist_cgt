@@ -148,5 +148,82 @@
             action="action_picking_contract_tree"
             groups="stock.group_stock_manager,account.group_account_manager"/>
 
+        <!-- inherit default Picking form -->
+        <record id="view_picking_inherit_contract_form" model="ir.ui.view">
+            <field name="name">stock.picking.inherit.contract.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <button name="%(stock.act_stock_return_picking)d" position="replace">
+                    <button name="%(stock.act_stock_return_picking)d" string="Reverse Transfer" type="action" groups="base.group_user" attrs="{'invisible':[('state','=','done'), '|', ('is_contract_delivery','=',True), ('state','!=','done')]}"/>
+                </button>
+                <field name="owner_id" position="after">
+                    <field name="is_contract_delivery" invisible="1"/>
+                    <field name="contract_invoiced" invisible="1"/>
+                    <field name="contract_to_invoice" invisible="1"/>
+                </field>
+                <page string="Products" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_contract_delivery','=',True)]}</attribute>
+                    <attribute name="name">main_products</attribute>
+                </page>
+                <page string="Operations" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_contract_delivery','=',True)]}</attribute>
+                </page>
+                <page string="Additional Info" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_contract_delivery','=',True)]}</attribute>
+                </page>
+                <notebook position="inside">
+                    <page string="Products" name="contract_products" attrs="{'invisible': [('is_contract_delivery','=',False)]}">
+                        <field name="contract_delivery_line" widget="one2many_list">
+                            <form string="Moves">
+                                <header>
+                                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                                </header>
+                                <group>
+                                    <group>
+                                        <field name="product_id" required="1"/>
+                                        <label for="product_uom_qty" required="1"/>
+                                        <div>
+                                            <field name="product_uom_qty" class="oe_inline" required="1"/>
+                                            <field name="product_uom" string="Unit Of Measure" groups="product.group_uom" class="oe_inline" required="1"/>
+                                        </div>
+                                        <field name="name" required="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="date" required="1"/>
+                                        <field name="date_expected" required="1"/>
+                                        <field name="invoice_state" required="1"/>
+                                        <field name="contract_pricelist_line_id" invisible="1"/>
+                                    </group>
+                                </group>
+                            </form>
+                            <tree string="Moves">
+                                <field name="product_id"/>
+                                <field name="product_uom_qty"/>
+                                <field name="product_uom"/>
+                                <field name="contract_pricelist_line_id" invisible="1"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                        <newline/>
+                        <field name="note" colspan="4"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <!-- Add Contract Invoiced filter in Search view -->
+        
+        <record id="view_picking_internal_search_inherit_contracts" model="ir.ui.view">
+            <field name="name">stock.picking.search.inherit.contracts</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="sale_stock.view_picking_internal_search_inherit"/>
+            <field name="arch" type="xml">
+                <filter name="to_invoice" position="replace">
+                    <filter string="To Invoice" name="to_invoice" icon="terp-dolar" domain="[('is_contract_delivery','=',True),'|',('contract_invoiced','=',False),('invoice_state', '=', '2binvoiced')]"/>
+                </filter>
+            </field>
+        </record>
+
     </data>
 </openerp>
