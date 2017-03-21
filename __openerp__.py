@@ -27,7 +27,7 @@
 This module adds following functionality :
 	1) It adds "Product Pricelist" tab in Sales/Sales/Contracts form to configure Products.
 ''',
-    'version': '8.0.2.0',
+    'version': '8.0.2.1',
     'author': 'CogitoWeb',
     'website': 'www.cogitoweb.it',
     'category': 'Tools',
