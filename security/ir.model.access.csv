@@ -9,12 +9,3 @@ access_sale_contract_pricelist_account_user,sale.contract.pricelist.account.user
 access_sale_contract_pricelist_account_manager,sale.contract.pricelist.account.manager,model_sale_contract_pricelist,account.group_account_manager,1,1,1,1
 ,,,,,,,
 access_sale_contract_pricelist_system_user,sale.contract.pricelist.user.all,model_sale_contract_pricelist,base.group_user,1,0,0,0
-,,,,,,,
-access_stock_move_contract_sale_user,stock.move.contract.sale.user,model_stock_move_contract,base.group_sale_salesman,1,1,1,1
-access_stock_move_contract_sale_manager,stock.move.contract.sale.manager,model_stock_move_contract,base.group_sale_manager,1,1,1,1
-,,,,,,,
-access_stock_move_contract_stock_user,stock.move.contract.stock.user,model_stock_move_contract,stock.group_stock_user,1,0,0,0
-access_stock_move_contract_stock_manager,stock.move.contract.stock.manager,model_stock_move_contract,stock.group_stock_manager,1,1,1,1
-,,,,,,,
-access_stock_move_contract_account_user,stock.move.contract.account.user,model_stock_move_contract,account.group_account_invoice,1,0,0,0
-access_stock_move_contract_account_manager,stock.move.contract.account.manager,model_stock_move_contract,account.group_account_manager,1,1,1,1

@@ -26,20 +26,14 @@
     'description': '''
 This module adds following functionality :
 	1) It adds "Product Pricelist" tab in Sales/Sales/Contracts form to configure Products.
-	2) It adds new menu "Sales/Invoicing/Contracts Delivery Order" for creating Delivery Orders related to Contracts.
-	3) On creating Delivery Order from above menu :
-    	a) On Selecting Partner, user can select Contract related to selected Partner
-    	b) If selected Contract has Only One Open Contract, it will get selected automatically
-    	c) On selecting Contract, all "Product Pricelists" defined in the contract will get loaded in Move Lines
 ''',
-    'version': '8.0.1',
+    'version': '8.0.2.0',
     'author': 'CogitoWeb',
     'website': 'www.cogitoweb.it',
     'category': 'Tools',
-    'depends': ['stock', 'stock_account', 'stock_dropshipping', 'account_analytic_analysis'],
+    'depends': ['account_analytic_analysis'],
     'data': [
         'views/account_analytic_account.xml',
-        'views/stock.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
