@@ -1,6 +1,7 @@
 # partner_contract_pricelist_cgt
 
 This module adds following functionality:
+
 	1) It adds "Product Pricelist" tab in Sales/Sales/Contracts form to configure Products.
 	2) It adds new menu "Sales/Invoicing/Contracts Delivery Order" for creating Delivery Orders related to Contracts.
 	3) On creating Delivery Order from above menu :
