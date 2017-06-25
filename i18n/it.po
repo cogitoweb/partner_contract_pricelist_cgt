@@ -84,7 +84,7 @@ msgstr "Picking"
 #. module: partner_contract_pricelist_cgt
 #: view:account.analytic.account:partner_contract_pricelist_cgt.account_analytic_account_form_form
 msgid "Pricelist Lines"
-msgstr "Righe di listino"
+msgstr "Dotazioni e listino"
 
 #. module: partner_contract_pricelist_cgt
 #: field:account.analytic.account,pricelist_ids:0
