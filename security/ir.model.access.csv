@@ -1,9 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_contract_pricelist_user,sale.contract.pricelist.user,model_sale_contract_pricelist,base.group_sale_salesman,1,0,0,0
-access_sale_contract_pricelist_sale_manager,sale.contract.pricelist.sale.manager,model_sale_contract_pricelist,base.group_sale_manager,1,1,1,1
-,,,,,,,
-access_sale_contract_pricelist_stock_user,sale.contract.pricelist.stock.user,model_sale_contract_pricelist,stock.group_stock_user,1,0,0,0
-access_sale_contract_pricelist_stock_manager,sale.contract.pricelist.stock.manager,model_sale_contract_pricelist,stock.group_stock_manager,1,1,1,1
+access_sale_contract_pricelist_user,sale.contract.pricelist.user,model_sale_contract_pricelist,sales_team.group_sale_salesman,1,0,0,0
+access_sale_contract_pricelist_sale_manager,sale.contract.pricelist.sale.manager,model_sale_contract_pricelist,sales_team.group_sale_manager,1,1,1,1
 ,,,,,,,
 access_sale_contract_pricelist_account_user,sale.contract.pricelist.account.user,model_sale_contract_pricelist,account.group_account_invoice,1,0,0,0
 access_sale_contract_pricelist_account_manager,sale.contract.pricelist.account.manager,model_sale_contract_pricelist,account.group_account_manager,1,1,1,1
