@@ -1,1 +1,2 @@
-from . import account_analytic_account
+import account_analytic_account
+import sale_contract_pricelist
