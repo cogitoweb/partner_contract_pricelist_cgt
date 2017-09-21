@@ -6,23 +6,23 @@
             <field name="name">account.analytic.account.invoice.form.pricelist</field>
             <field name="model">account.analytic.account</field>
             <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
-            <field eval="40" name="priority"/>
+            <field name="priority">40</field>
             <field name="arch" type="xml">
-                <sheet position="inside">
-                    <notebook>
-                        <page name="product_pricelist" string="Pricelist Lines">
-                            <field name="pricelist_ids" widget="one2many_list" nolabel="1">
-                                <tree string="Partner Pricelist" editable="bottom">
-                                    <field name="product_id" required="1"/>
-                                    <field name="product_uom_id"/>
-                                    <field name="minimum_stock_qty"/>
-                                    <field name="sell_price"/>
-                                    <field name="sequence"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
-                </sheet>
+
+                <page name="recurring_invoices" position="before">
+                    <page name="product_pricelist" string="Pricelist Lines">
+                        <field name="pricelist_ids" widget="one2many_list" nolabel="1">
+                            <tree string="Partner Pricelist" editable="bottom">
+                                <field name="product_id" required="1"/>
+                                <field name="product_uom_id"/>
+                                <field name="minimum_stock_qty"/>
+                                <field name="sell_price"/>
+                                <field name="sequence"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+
             </field>
         </record>
 

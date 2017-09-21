@@ -36,7 +36,7 @@
     'version': "10.0.2.1",
     
     # any module necessary for this one to work correctly
-    'depends': ['stock'], #account_analytic_analysis
+    'depends': ['stock', 'accounting_full'], #account_analytic_analysis
     
     # always loaded
     'data': [
