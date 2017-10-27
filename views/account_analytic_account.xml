@@ -17,6 +17,7 @@
                                 <field name="product_uom_id"/>
                                 <field name="minimum_stock_qty"/>
                                 <field name="sell_price"/>
+                                <field name="sell_discount"/>
                                 <field name="sequence"/>
                             </tree>
                         </field>
