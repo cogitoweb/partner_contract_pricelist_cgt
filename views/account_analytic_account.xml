@@ -18,7 +18,7 @@
                                 <field name="minimum_stock_qty"/>
                                 <field name="sell_price"/>
                                 <field name="sell_discount"/>
-                                <field name="sequence"/>
+                                <field name="sequence" widget="handle"/>
                             </tree>
                         </field>
                     </page>
