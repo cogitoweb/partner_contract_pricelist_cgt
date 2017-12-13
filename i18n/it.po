@@ -59,7 +59,7 @@ msgstr "Ultima modifica il"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_write_uid
 msgid "Last Updated by"
-msgstr "Ultima modifica da"
+msgstr "Ultima modifica di"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_write_date
@@ -99,7 +99,7 @@ msgstr "Unità di Vendita"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_contract_pricelist
 msgid "Sales Contract Pricelist"
-msgstr "Sales Contract Pricelist"
+msgstr "Listino"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_discount
