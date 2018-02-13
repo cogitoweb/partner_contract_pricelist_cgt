@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-13 15:36+0000\n"
-"PO-Revision-Date: 2017-12-13 15:36+0000\n"
+"POT-Creation-Date: 2018-02-13 15:36+0000\n"
+"PO-Revision-Date: 2018-02-13 15:36+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr "Prodotto"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_uom_id
 msgid "Product UOM"
-msgstr "Unità di Vendita"
+msgstr "Unità di Misura"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_contract_pricelist
