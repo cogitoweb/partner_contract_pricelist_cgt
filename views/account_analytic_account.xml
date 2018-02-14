@@ -9,7 +9,7 @@
             <field name="priority">40</field>
             <field name="arch" type="xml">
 
-                <page name="recurring_invoices" position="before">
+                <page name="recurring_invoices_tab" position="before">
                     <page name="product_pricelist" string="Pricelist Lines">
                         <field name="pricelist_ids" widget="one2many_list" nolabel="1">
                             <tree string="Partner Pricelist" editable="bottom">
