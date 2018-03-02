@@ -29,8 +29,8 @@
             1) It adds "Product Pricelist" tab in Sales/Sales/Contracts form to configure Products.
     """,
     
-    'author': "CogitoWeb",
-    'website': "https://www.cogitoweb.it",
+    'author': "Cogito",
+    'website': "http://www.cogitoweb.it",
 
     'category': "Tools",
     'version': "10.0.2.1",
