@@ -21,10 +21,10 @@ class SaleContractPricelist(models.Model):
             raise ValidationError("Sell Discount must be between 0 and 100")
 
 
-    analytic_account_id = fields.Many2one('account.analytic.account', 'Analytic Account', ondelete="cascade")
-    product_id = fields.Many2one('product.product', 'Product', domain="[('type','in',('product', 'consu'))]")
-    product_uom_id = fields.Many2one('product.uom', 'Product UOM')
-    minimum_stock_qty = fields.Integer('Minimum Stock Quantity')
-    sell_price = fields.Float('Sell Price')
-    sell_discount = fields.Float('Sell Discount (%)', digits=(6,3), default=0.0)
-    sequence = fields.Integer('Sequence')
+    analytic_account_id = fields.Many2one(comodel_name='account.analytic.account', string='Analytic Account', ondelete="cascade")
+    product_id = fields.Many2one(comodel_name='product.product', string='Product', domain="[('type', 'in', ('product', 'consu'))]")
+    product_uom_id = fields.Many2one(comodel_name='product.uom', string='Product UOM')
+    minimum_stock_qty = fields.Integer(string='Minimum Stock Quantity')
+    sell_price = fields.Float(string='Sell Price')
+    sell_discount = fields.Float(string='Sell Discount (%)', digits=(6,3), default=0.0)
+    sequence = fields.Integer(string='Sequence')
