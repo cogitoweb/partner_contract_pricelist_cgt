@@ -28,4 +28,4 @@ class SaleContractPricelist(models.Model):
     description = fields.Char(string='Description')
     sell_price = fields.Float(string='Sell Price')
     sell_discount = fields.Float(string='Sell Discount (%)', digits=(6,3), default=0.0)
-    sequence = fields.Integer(string='Sequence')
+    sequence = fields.Integer(string='Sequence', default=20)
