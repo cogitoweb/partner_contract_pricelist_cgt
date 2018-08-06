@@ -12,14 +12,14 @@
                 <page name="recurring_invoices_tab" position="before">
                     <page name="product_pricelist" string="Pricelist Lines">
                         <field name="pricelist_ids" widget="one2many_list" nolabel="1">
-                            <tree string="Partner Pricelist" editable="bottom" default_order="product_id asc">
+                            <tree string="Partner Pricelist" editable="bottom">
+                                <field name="sequence" widget="handle"/>
                                 <field name="product_id" required="1"/>
                                 <field name="description"/>
                                 <field name="product_uom_id"/>
                                 <field name="minimum_stock_qty"/>
                                 <field name="sell_price"/>
                                 <field name="sell_discount"/>
-                                <field name="sequence" widget="handle"/>
                             </tree>
                         </field>
                     </page>
