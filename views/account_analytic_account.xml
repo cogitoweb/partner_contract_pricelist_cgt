@@ -16,7 +16,7 @@
                                 <field name="sequence" widget="handle"/>
                                 <field name="product_id" required="1"/>
                                 <field name="description"/>
-                                <field name="product_uom_id"/>
+                                <field name="product_uom_id" readonly="1" />
                                 <field name="minimum_stock_qty"/>
                                 <field name="sell_price"/>
                                 <field name="sell_discount"/>
