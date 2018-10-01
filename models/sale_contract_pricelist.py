@@ -8,6 +8,7 @@ class SaleContractPricelist(models.Model):
     _name = "sale.contract.pricelist"
     _description = "Sales Contract Pricelist"
     _order = "sequence"
+    _rec_name = "product_id"
 
     @api.one
     @api.constrains('sell_discount')
