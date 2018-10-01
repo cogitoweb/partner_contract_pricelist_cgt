@@ -10,20 +10,52 @@ class SaleContractPricelist(models.Model):
     _order = "sequence"
     _rec_name = "product_id"
 
+
     @api.one
     @api.constrains('sell_discount')
     def _check_description(self):
         if self.sell_discount < 0 or self.sell_discount > 100:
             raise ValidationError("Sell Discount must be between 0 and 100")
 
-    analytic_account_id = fields.Many2one(comodel_name='account.analytic.account', string='Analytic Account', ondelete="cascade")
-    product_id = fields.Many2one(comodel_name='product.product', string='Product')
-    product_uom_id = fields.Many2one(related='product_id.product_tmpl_id.uom_id', store=True)
-    minimum_stock_qty = fields.Integer(string='Minimum Stock Quantity')
-    description = fields.Char(string='Description')
-    sell_price = fields.Float(string='Sell Price')
-    sell_discount = fields.Float(string='Sell Discount (%)', digits=(6,3), default=0.0)
-    sequence = fields.Integer(string='Sequence', default=20)
+
+    analytic_account_id = fields.Many2one(
+        comodel_name='account.analytic.account',
+        string='Analytic Account',
+        ondelete="cascade"
+    )
+
+    product_id = fields.Many2one(
+        comodel_name='product.product',
+        string='Product'
+    )
+
+    product_uom_id = fields.Many2one(
+        related='product_id.product_tmpl_id.uom_id',
+        store=True
+    )
+
+    minimum_stock_qty = fields.Integer(
+        string='Minimum Stock Quantity'
+    )
+
+    description = fields.Char(
+        string='Description'
+    )
+
+    sell_price = fields.Float(
+        string='Sell Price'
+    )
+
+    sell_discount = fields.Float(
+        string='Sell Discount (%)',
+        digits=(6, 3), default=0.0
+    )
+
+    sequence = fields.Integer(
+        string='Sequence',
+        default=20
+    )
+
 
     def read(self, fields, load='_classic_read'):
         """ Without this call, dynamic fields build by fields_view_get()
