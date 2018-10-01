@@ -24,3 +24,15 @@ class SaleContractPricelist(models.Model):
     sell_price = fields.Float(string='Sell Price')
     sell_discount = fields.Float(string='Sell Discount (%)', digits=(6,3), default=0.0)
     sequence = fields.Integer(string='Sequence', default=20)
+
+    def read(self, fields, load='_classic_read'):
+        """ Without this call, dynamic fields build by fields_view_get()
+            generate a log warning, i.e.:
+            sale.contract.pricelist.read() with unknown field 'name'
+        """
+        real_fields = fields
+        if fields:
+            # We remove fields which are not in _fields
+            real_fields = [x for x in fields if x in self._fields]
+
+        return super(SaleContractPricelist, self).read(real_fields, load=load)
