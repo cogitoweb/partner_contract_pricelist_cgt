@@ -11,12 +11,7 @@ class SaleContractPricelist(models.Model):
     _rec_name = "product_id"
 
 
-    @api.one
-    @api.constrains('sell_discount')
-    def _check_description(self):
-        if self.sell_discount < 0 or self.sell_discount > 100:
-            raise ValidationError("Sell Discount must be between 0 and 100")
-
+    # Fields declaration
 
     analytic_account_id = fields.Many2one(
         comodel_name='account.analytic.account',
@@ -56,6 +51,17 @@ class SaleContractPricelist(models.Model):
         default=20
     )
 
+
+    # Constraints and onchanges
+
+    @api.one
+    @api.constrains('sell_discount')
+    def _check_description(self):
+        if self.sell_discount < 0 or self.sell_discount > 100:
+            raise ValidationError("Sell Discount must be between 0 and 100")
+
+
+    # CRUD methods (and name_get, name_search, ...) overrides
 
     def read(self, fields, load='_classic_read'):
         """ Without this call, dynamic fields build by fields_view_get()
