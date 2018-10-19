@@ -7,7 +7,7 @@ from odoo.tools.translate import _
 class SaleContractPricelist(models.Model):
     _name = "sale.contract.pricelist"
     _description = "Sales Contract Pricelist"
-    _order = "sequence"
+    _order = "sequence, product_id"
     _rec_name = "product_id"
 
 
