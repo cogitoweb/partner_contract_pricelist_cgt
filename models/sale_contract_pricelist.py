@@ -21,7 +21,8 @@ class SaleContractPricelist(models.Model):
 
     product_id = fields.Many2one(
         comodel_name='product.product',
-        string='Product'
+        string='Product',
+        domain=[('sale_ok', '=', True)]
     )
 
     product_uom_id = fields.Many2one(
