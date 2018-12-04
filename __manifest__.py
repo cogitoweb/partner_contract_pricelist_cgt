@@ -41,6 +41,7 @@
     # always loaded
     'data': [
         'views/account_analytic_account.xml',
+        'views/sale_contract_pricelist.xml',
         'security/ir.model.access.csv',
     ],
     
