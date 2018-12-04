@@ -34,9 +34,9 @@
         </record>
         
         <!-- pricelist line -->
-        <menuitem id="sale_contract_pricelist_lines_menu"
+        <menuitem id="sale_contract_pricelist_menu"
             name="Contract lines"
-            action="sale_contract_pricelist_lines_action"
+            action="sale_contract_pricelist_action"
             parent="sales_team.menu_sales"
             sequence="6"
         />
