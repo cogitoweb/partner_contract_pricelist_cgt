@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="sale_contract_pricelist_tree" model="ir.ui.view">
+            <field name="name">Sale Contract pricelist tree</field>
+            <field name="model">sale.contract.pricelist</field>
+            <field name="arch" type="xml">
+
+                <tree string="Sale Contract pricelist" default_order="analytic_account_id desc" create="0" delete="0">
+                    <field name="analytic_account_id" widget="many2one_clickable" />
+                    <field name="product_id" widget="many2one_clickable" />
+                    <field name="product_uom_id" />
+                    <field name="minimum_stock_qty" />
+                    <field name="sell_price" />
+                    <field name="sell_discount"/>
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="sale_contract_pricelist_action" model="ir.actions.act_window">
+            <field name="name">Sale Contract pricelist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.contract.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="view_id" ref="sale_contract_pricelist_tree"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Browse Contract pricelist
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
