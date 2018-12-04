@@ -32,6 +32,14 @@
               </p>
             </field>
         </record>
+        
+        <!-- pricelist line -->
+        <menuitem id="sale_contract_pricelist_lines_menu"
+            name="Contract lines"
+            action="sale_contract_pricelist_lines_action"
+            parent="sales_team.menu_sales"
+            sequence="6"
+        />
 
     </data>
 </odoo>
