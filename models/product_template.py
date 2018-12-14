@@ -29,7 +29,6 @@ class ProductTemplate(models.Model):
 
         return {
             'name': action.name,
-            'help': action.help,
             'type': action.type,
             'view_type': action.view_type,
             'view_mode': action.view_mode,
