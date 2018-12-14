@@ -27,6 +27,10 @@ class ProductTemplate(models.Model):
         action = self.env.ref('partner_contract_pricelist_cgt.sale_contract_pricelist_action')
         product_ids = self.with_context(active_test=False).product_variant_ids.ids
 
+        # sequences can be copied by slicing
+        new_domain = action.domain[:]
+        new_domain.append(('product_id.product_tmpl_id', '=', self.id))
+
         return {
             'name': action.name,
             'help': action.help,
@@ -36,5 +40,5 @@ class ProductTemplate(models.Model):
             'target': action.target,
             'context': "{'default_product_id': " + str(product_ids[0]) + "}",
             'res_model': action.res_model,
-            'domain': [('product_id.product_tmpl_id', '=', self.id)],
+            'domain': new_domain
         }
