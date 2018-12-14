@@ -24,11 +24,12 @@ class ProductTemplate(models.Model):
     @api.multi
     def action_view_contract_lines(self):
         self.ensure_one()
-        action = self.env.ref('partner_contract_pricelist_cgt.sale_contract_pricelist_tree')
+        action = self.env.ref('partner_contract_pricelist_cgt.sale_contract_pricelist_action')
         product_ids = self.with_context(active_test=False).product_variant_ids.ids
 
         return {
             'name': action.name,
+            'help': action.help,
             'type': action.type,
             'view_type': action.view_type,
             'view_mode': action.view_mode,
