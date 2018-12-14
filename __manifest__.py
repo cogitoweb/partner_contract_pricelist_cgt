@@ -40,9 +40,11 @@
     
     # always loaded
     'data': [
+        'security/ir.model.access.csv',
+
         'views/account_analytic_account.xml',
         'views/sale_contract_pricelist.xml',
-        'security/ir.model.access.csv',
+        'views/product_template.xml',
     ],
     
     'installable': True,
