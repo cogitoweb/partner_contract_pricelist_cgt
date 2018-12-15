@@ -16,10 +16,25 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.product_template_form
+msgid "<span class=\"o_stat_text\">Contract lines</span>"
+msgstr "<span class=\"o_stat_text\">Righe di contratto</span>"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_account_analytic_account
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_analytic_account_id
 msgid "Analytic Account"
-msgstr "Contabilità Analitica"
+msgstr "Contratto"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.actions.act_window,help:partner_contract_pricelist_cgt.sale_contract_pricelist_action
+msgid "Browse Contract pricelist"
+msgstr "Naviga tra le righe di contratto"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.ui.menu,name:partner_contract_pricelist_cgt.sale_contract_pricelist_menu
+msgid "Contract lines"
+msgstr "Righe di contratto"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_create_uid
@@ -30,6 +45,11 @@ msgstr "Creato da"
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_create_date
 msgid "Created on"
 msgstr "Creato il"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,help:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_uom_id
+msgid "Default Unit of Measure used for all stock operation."
+msgstr "Unità di misura predefinita per ogni operazione di stoccaggio"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_description
@@ -92,9 +112,21 @@ msgid "Pricelists"
 msgstr "Listini prezzi"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.model,name:partner_contract_pricelist_cgt.model_product_product
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_id
 msgid "Product"
 msgstr "Prodotto"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model,name:partner_contract_pricelist_cgt.model_product_template
+msgid "Product Template"
+msgstr "Template prodotto"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.actions.act_window,name:partner_contract_pricelist_cgt.sale_contract_pricelist_action
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.sale_contract_pricelist_tree
+msgid "Sale Contract pricelist"
+msgstr "Listino"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_uom_id
@@ -121,3 +153,7 @@ msgstr "Prezzo"
 msgid "Sequence"
 msgstr "Sequenza"
 
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_uom_id
+msgid "Unit of Measure"
+msgstr "Unità di Misura"
