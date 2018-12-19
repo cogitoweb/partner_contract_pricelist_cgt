@@ -39,7 +39,8 @@ class SaleContractPricelist(models.Model):
     )
 
     sell_price = fields.Float(
-        string='Sell Price'
+        string='Sell Price',
+        digits=(10, 3)
     )
 
     sell_discount = fields.Float(
