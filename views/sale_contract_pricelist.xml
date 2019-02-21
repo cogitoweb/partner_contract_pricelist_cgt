@@ -2,6 +2,7 @@
 <odoo>
     <data>
 
+        <!-- tree view -->
         <record id="sale_contract_pricelist_tree" model="ir.ui.view">
             <field name="name">Sale Contract pricelist tree</field>
             <field name="model">sale.contract.pricelist</field>
@@ -19,6 +20,8 @@
             </field>
         </record>
 
+
+        <!-- action -->
         <record id="sale_contract_pricelist_action" model="ir.actions.act_window">
             <field name="name">Sale Contract pricelist</field>
             <field name="type">ir.actions.act_window</field>
@@ -33,8 +36,9 @@
               </p>
             </field>
         </record>
-        
-        <!-- pricelist line -->
+
+
+        <!-- menu -->
         <menuitem id="sale_contract_pricelist_menu"
             name="Contract lines"
             action="sale_contract_pricelist_action"

@@ -15,11 +15,8 @@ _logger = logging.getLogger(__name__)
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    # Compute
 
-    # Fields
-
-    # Methods
+    # Action methods
 
     @api.multi
     def action_view_contract_lines(self):

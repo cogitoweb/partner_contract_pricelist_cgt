@@ -1,15 +1,20 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-from odoo.tools.translate import _
+
+import pprint
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class AnalyticAccount(models.Model):
     _inherit = "account.analytic.account"
 
 
+    # Fields declaration
+
     pricelist_ids = fields.One2many(
-            comodel_name='sale.contract.pricelist', 
-            inverse_name='analytic_account_id', 
-            string='Pricelists'
-        )
+        comodel_name='sale.contract.pricelist',
+        inverse_name='analytic_account_id',
+        string='Pricelists'
+    )

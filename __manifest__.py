@@ -23,21 +23,25 @@
 {
     'name': "Partner Contract Pricelist",
     'summary': "Partner Contract Pricelist",
-    
+
     'description': """
         This module adds following functionality :
             1) It adds "Product Pricelist" tab in Sales/Sales/Contracts form to configure Products.
     """,
-    
+
     'author': "Cogito",
     'website': "http://www.cogitoweb.it",
 
     'category': "Tools",
     'version': "10.0.2.1",
-    
+
     # any module necessary for this one to work correctly
-    'depends': ['stock', 'accounting_full'], #account_analytic_analysis
-    
+    'depends': [
+        'stock',
+        'accounting_full',
+        # 'account_analytic_analysis'
+    ],
+
     # always loaded
     'data': [
         'security/ir.model.access.csv',
@@ -46,7 +50,7 @@
         'views/sale_contract_pricelist.xml',
         'views/product_template.xml',
     ],
-    
+
     'installable': True,
     'auto_install': False,
 }
