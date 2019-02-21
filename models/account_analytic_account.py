@@ -18,3 +18,16 @@ class AnalyticAccount(models.Model):
         inverse_name='analytic_account_id',
         string='Pricelists'
     )
+
+    istat_revaluation_enabled = fields.Boolean(
+        string='Istat revaluation',
+        default=False,
+    )
+
+    istat_revaluation_year = fields.Integer(
+        string='Istat revaluation year',
+    )
+
+    istat_revaluation_percentage = fields.Integer(
+        string='Istat revaluation (%)',
+    )

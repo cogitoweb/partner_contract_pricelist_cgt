@@ -10,6 +10,7 @@
             <field name="priority">40</field>
             <field name="arch" type="xml">
 
+                <!-- pricelist -->
                 <page name="recurring_invoices_tab" position="before">
                     <page name="product_pricelist" string="Pricelist Lines">
                         <field name="pricelist_ids" widget="one2many_list" nolabel="1">
@@ -25,6 +26,20 @@
                         </field>
                     </page>
                 </page>
+
+                <!-- istat -->
+                <xpath expr="//page[@name='invoicing_settings']" position="inside">
+                    <group name="istat_data_group">
+                        <group>
+                            <field name="istat_revaluation_enabled"/>
+                                <field name="istat_revaluation_year" attrs="{'invisible': [('istat_revaluation_enabled', '=', False)]}"/>
+                                <field name="istat_revaluation_percentage" attrs="{'invisible': [('istat_revaluation_enabled', '=', False)]}"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </group>
+                </xpath>
 
             </field>
         </record>
