@@ -44,11 +44,16 @@
 
     # always loaded
     'data': [
+        # security
         'security/ir.model.access.csv',
 
+        # views
         'views/account_analytic_account.xml',
         'views/sale_contract_pricelist.xml',
         'views/product_template.xml',
+
+        # wizard
+        'wizard/istat_revaluation.xml'
     ],
 
     'installable': True,

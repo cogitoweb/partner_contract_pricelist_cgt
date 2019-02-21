@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- wizard form -->
+    	<record id="view_pricelist_apply_istat_revaluation_form" model="ir.ui.view">
+            <field name="name">Pricelist Apply Istat Revaluation Wizard</field>
+            <field name="model">wizard.istat_revaluation</field>
+            <field name="priority">40</field>
+            <field name="arch" type="xml">
+
+				<form string="Apply Istat Revaluation">
+                    <group>
+                        <group>
+					        <field name="target_year" required="1"/>
+                        </group>
+                        <group>
+					        <field name="target_percentage" required="1"/>
+                        </group>
+					    <field name="contract_ids" nolabel="1">
+                            <tree string="Contracts">
+                                <field name="name" string="Contract"/>
+                                <field name="partner_id"/>
+                                <field name="istat_revaluation_enabled"/>
+                                <field name="istat_revaluation_year"/>
+                                <field name="istat_revaluation_percentage"/>
+                            </tree>
+                        </field>
+                    </group>
+
+					<footer>
+						<button name="action_apply_istat_revaluation" type="object" string="Apply" class="oe_highlight"/>
+						<button special="cancel" string="Cancel"/>
+					</footer>
+				</form>
+
+			</field>
+		</record>
+
+
+		<!-- action -->
+		<record id="view_pricelist_apply_istat_revaluation_action" model="ir.actions.act_window">
+			<field name="name">Apply Istat Revaluation</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.istat_revaluation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_pricelist_apply_istat_revaluation_form"/>
+			<field name="target">new</field>
+		</record>
+
+
+        <record id="view_pricelist_apply_istat_revaluation_menu" model="ir.values">
+            <field name="name">Apply Istat Revaluation</field>
+            <field name="model">account.analytic.account</field>
+            <field name="key" >action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,%d' % view_pricelist_apply_istat_revaluation_action"/>
+        </record>
+
+	</data>
+</odoo>
