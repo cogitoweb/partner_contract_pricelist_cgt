@@ -32,11 +32,10 @@
                     <group name="istat_data_group">
                         <group>
                             <field name="istat_revaluation_enabled"/>
-                                <field name="istat_revaluation_year" attrs="{'invisible': [('istat_revaluation_enabled', '=', False)]}"/>
-                                <field name="istat_revaluation_percentage" attrs="{'invisible': [('istat_revaluation_enabled', '=', False)]}"/>
-                            </group>
-                            <group>
-                            </group>
+                            <field name="istat_revaluation_year" attrs="{'invisible': [('istat_revaluation_enabled', '=', False)]}"/>
+                            <field name="istat_revaluation_percentage" attrs="{'invisible': [('istat_revaluation_enabled', '=', False)]}"/>
+                        </group>
+                        <group>
                         </group>
                     </group>
                 </xpath>
