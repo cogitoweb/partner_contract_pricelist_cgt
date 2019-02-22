@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-27 18:30+0000\n"
-"PO-Revision-Date: 2018-07-27 18:30+0000\n"
+"POT-Creation-Date: 2019-02-22 18:30+0000\n"
+"PO-Revision-Date: 2019-02-22 18:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: partner_contract_pricelist_cgt
+#: code:addons/partner_contract_pricelist_cgt/wizard/istat_revaluation.py:73
+#, python-format
+msgid "%s contracts updated for %s Istat revaluation with %s%%."
+msgstr "%s contratti aggiornati per Rivalutazione Istat %s del %s%%."
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.product_template_form
@@ -27,14 +33,46 @@ msgid "Analytic Account"
 msgstr "Contratto"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
+msgid "Apply"
+msgstr "Salva"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.actions.act_window,name:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_action
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
+msgid "Apply Istat Revaluation"
+msgstr "Applica Rivalutazione Istat"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.actions.act_window,help:partner_contract_pricelist_cgt.sale_contract_pricelist_action
 msgid "Browse Contract pricelist"
 msgstr "Naviga tra le righe di contratto"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: partner_contract_pricelist_cgt
+#: code:addons/partner_contract_pricelist_cgt/wizard/istat_revaluation.py:82
+#, python-format
+msgid "Close"
+msgstr "Chiudi"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
+msgid "Contract"
+msgstr "Contratto"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.ui.menu,name:partner_contract_pricelist_cgt.sale_contract_pricelist_menu
 msgid "Contract lines"
 msgstr "Righe di contratto"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
+msgid "Contracts"
+msgstr "Contratti"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_create_uid
@@ -90,6 +128,12 @@ msgstr "Ultima modifica di"
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_write_date
 msgid "Last Updated on"
 msgstr "Ultima modifica il"
+
+#. module: partner_contract_pricelist_cgt
+#: code:addons/partner_contract_pricelist_cgt/wizard/istat_revaluation.py:77
+#, python-format
+msgid "Message"
+msgstr "Messaggio"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_minimum_stock_qty
