@@ -49,6 +49,7 @@
 
         # views
         'views/account_analytic_account.xml',
+        'views/istat_revaluation_history.xml',
         'views/sale_contract_pricelist.xml',
         'views/product_template.xml',
 

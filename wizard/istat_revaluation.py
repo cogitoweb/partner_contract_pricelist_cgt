@@ -65,6 +65,9 @@ class PricelistApplyIstatRevaluation(models.TransientModel):
                     {'sell_price': current_price + increment}
                 )
 
+            # [TODO]: create history line
+            # in model istat.revaluation_history
+
             # set last execution year/percentage
             contract.istat_revaluation_year = self.target_year
             contract.istat_revaluation_percentage = self.target_percentage
