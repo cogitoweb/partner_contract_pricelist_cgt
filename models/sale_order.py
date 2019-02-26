@@ -65,7 +65,7 @@ class PricelistSaleOrder(models.Model):
                 % (self.contract_id.name)
             )
 
-        order_confirmation_date = self.confirmation_date
+        order_confirmation_date = datetime.datetime.strptime(self.confirmation_date, DEFAULT_SERVER_DATETIME_FORMAT).date()
         one_year_later = order_confirmation_date + relativedelta(years=1)
 
         # default/required vals of the contract
