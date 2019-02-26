@@ -17,25 +17,6 @@ class PricelistSaleOrder(models.Model):
 
     # Fields declaration
 
-    pricelist_ids = fields.One2many(
-        comodel_name='sale.contract.pricelist',
-        inverse_name='analytic_account_id',
-        string='Pricelists'
-    )
-
-    istat_revaluation_enabled = fields.Boolean(
-        string='Istat revaluation',
-        default=False,
-    )
-
-    istat_revaluation_year = fields.Integer(
-        string='Istat revaluation year',
-    )
-
-    istat_revaluation_percentage = fields.Integer(
-        string='Istat revaluation (%)',
-    )
-
     contract_id = fields.Many2one(
         string='Contract',
         comodel_name='account.analytic.account',
