@@ -60,6 +60,7 @@ class PricelistSaleOrder(models.Model):
         }
 
         # create contract
+        contract_vals = self._prepare_contract_vals(contract_vals)
         new_contract = self.env['account.analytic.account'].create(contract_vals)
 
         # override name
@@ -97,3 +98,9 @@ class PricelistSaleOrder(models.Model):
             'res_id': new_contract.id,
             'type': 'ir.actions.act_window'
         }
+
+
+    # dumb function for contract_vals overrides
+    # before creation
+    def _prepare_contract_vals(self, vals):
+        return vals
