@@ -72,12 +72,11 @@ class PricelistSaleOrder(models.Model):
             Pricelist.create({
                 'analytic_account_id': new_contract.id,
                 'product_id': order_line.product_id.id,
+                'description': order_line.name,
                 'product_uom_id': order_line.product_uom.id,
                 'minimum_stock_qty': order_line.product_uom_qty,
                 'sell_price': order_line.price_unit,
                 'sell_discount': order_line.discount,
-                'own_lot_counting': '1',
-                'uos_rounding_factor': 0,
                 'order_line_id': order_line.id
             })
 
