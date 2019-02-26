@@ -49,8 +49,9 @@
 
         # views
         'views/account_analytic_account.xml',
-        'views/sale_contract_pricelist.xml',
         'views/product_template.xml',
+        'views/sale_contract_pricelist.xml',
+        'views/sale_order.xml',
 
         # wizard
         'wizard/istat_revaluation.xml'
