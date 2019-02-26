@@ -56,6 +56,12 @@ class SaleContractPricelist(models.Model):
         default=20
     )
 
+    order_line_id = fields.Many2one(
+        string='Order line',
+        comodel_name='sale.order.line',
+        ondelete='set null',
+    )
+
 
     # Constraints and onchanges
 

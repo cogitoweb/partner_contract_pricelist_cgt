@@ -3,6 +3,7 @@
     <data>
 
         <!-- tree view -->
+        <!-- note: there's also an inline-tree on account_analytic_account -->
         <record id="sale_contract_pricelist_tree" model="ir.ui.view">
             <field name="name">Sale Contract pricelist tree</field>
             <field name="model">sale.contract.pricelist</field>
