@@ -17,6 +17,12 @@
                     />
                 </xpath>
 
+                <!-- link contract if set -->
+                <field name="company_id" position="after">
+                    <field name="contract_id" readonly="1" 
+                        attrs="{'invisible': [('contract_id', '=', False)]}" />
+                </field>
+
             </field>
         </record>
 
