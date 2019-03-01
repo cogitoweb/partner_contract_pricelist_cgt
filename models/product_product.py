@@ -27,6 +27,12 @@ class PricelistProductProduct(models.Model):
         # alias
         Pricelist = self.env['sale.contract.pricelist']
 
+        # convert to obj, in case ids are obtained from context
+        if isinstance(contract_id, int):
+            contract_id = self.env['account.analytic.account'].browse(contract_id)
+        if isinstance(partner_id, int):
+            partner_id = self.env['res.partner'].browse(partner_id)
+
         if contract_id:
             res_pricelist = Pricelist.search([
                 ('analytic_account_id', '=', contract_id.id),
