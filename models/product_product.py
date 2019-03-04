@@ -18,6 +18,34 @@ class PricelistProductProduct(models.Model):
     )
 
 
+    # CRUD methods (and name_get, name_search, ...) overrides
+
+    # @api.model
+    # def search(self, args, offset=0, limit=None, order=None, count=False):
+    #     use_only_supplied_product = self.env.context.get('show_only_contract_products', False)
+    #     contract_id = self.env.context.get('contract_id', False)
+
+    #     _logger.info(
+    #         " <-> use_only_supplied_product %s - contract_id %s"
+    #         % (use_only_supplied_product, contract_id)
+    #     )
+
+    #     if use_only_supplied_product:
+    #         product_list = self.env['sale.contract.pricelist'].search([
+    #             ('analytic_account_id', '=', contract_id)
+    #         ])
+
+    #         _logger.info(" <-> product_list %s" % product_list)
+
+    #         args += [
+    #             ('id', 'in', [x.product_id.id for x in product_list])
+    #         ]
+
+    #     return super(PricelistProductProduct, self).search(
+    #         args, offset=offset, limit=limit, order=order, count=count
+    #     )
+
+
     # Business methods
 
     @api.multi
