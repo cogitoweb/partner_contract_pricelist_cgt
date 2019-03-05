@@ -15,5 +15,6 @@ class PricelistPackagePreparation(models.Model):
 
     show_only_contract_products = fields.Boolean(
         string="Show only products from contract",
-        help="If checked, only the products in the partner contract will be shown."
+        help="If checked, only the products in the partner contract will be shown.",
+        default=False, store=False
     )

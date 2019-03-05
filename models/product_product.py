@@ -25,11 +25,6 @@ class PricelistProductProduct(models.Model):
         use_only_supplied_product = self.env.context.get('show_only_contract_products', False)
         contract_id = self.env.context.get('contract_id', False)
 
-        _logger.info(
-            " <-> use_only_supplied_product %s - contract_id %s"
-            % (use_only_supplied_product, contract_id)
-        )
-
         # filter search results showing only the products in the pricelist
         if use_only_supplied_product:
             product_list = self.env['sale.contract.pricelist'].search([
