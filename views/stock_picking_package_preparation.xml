@@ -10,9 +10,19 @@
             <field name="priority">45</field>
             <field name="arch" type="xml">
 
+                <!-- toggle product search filter -->
+                <xpath expr="//field[@name='line_ids']" position="before">
+                    <field name="show_only_contract_products" class="oe_edit_only"
+                       attrs="{'invisible': [('state', 'not in', ('draft'))]}"
+                    />
+                    <label for="show_only_contract_products" class="oe_edit_only"
+                       attrs="{'invisible': [('state', 'not in', ('draft'))]}"
+                    />
+                </xpath>
+
                 <!-- context for product search filter -->
                 <xpath expr="//field[@name='line_ids']/form//field[@name='product_id']" position="attributes">
-                    <attribute name="context">{'contract_id': contract_id, 'show_only_contract_products': True}</attribute>
+                    <attribute name="context">{'contract_id': contract_id, 'show_only_contract_products': parent.show_only_contract_products}</attribute>
                 </xpath>
 
             </field>

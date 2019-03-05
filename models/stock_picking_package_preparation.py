@@ -13,8 +13,7 @@ class PricelistPackagePreparation(models.Model):
 
     # Fields declaration
 
-    use_only_supplied_product = fields.Boolean(
-        string="Use only allowed products",
-        help="If checked, only the products provided by this supplier "
-             "will be shown."
+    show_only_contract_products = fields.Boolean(
+        string="Show only products from contract",
+        help="If checked, only the products in the partner contract will be shown."
     )
