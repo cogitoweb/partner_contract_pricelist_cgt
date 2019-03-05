@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-22 18:30+0000\n"
-"PO-Revision-Date: 2019-02-22 18:30+0000\n"
+"POT-Creation-Date: 2019-03-05 18:30+0000\n"
+"PO-Revision-Date: 2019-03-05 18:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,9 +60,18 @@ msgid "Close"
 msgstr "Chiudi"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_order_contract_id
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
 msgid "Contract"
 msgstr "Contratto"
+
+#. module: partner_contract_pricelist_cgt
+#: code:addons/partner_contract_pricelist_cgt/models/sale_order.py:45
+#, python-format
+msgid "Contract has already been generated from this order.\n"
+"%s"
+msgstr "Esiste già un contratto generato da questo ordine:\n"
+"%s"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.menu,name:partner_contract_pricelist_cgt.sale_contract_pricelist_menu
@@ -100,9 +109,19 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_sale_order_form_inherit
+msgid "Generate contract"
+msgstr "Genera contratto"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_id
 msgid "ID"
 msgstr "ID"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,help:partner_contract_pricelist_cgt.field_stock_picking_package_preparation_show_only_contract_products
+msgid "If checked, only the products in the partner contract will be shown."
+msgstr "Se abilitato, verranno mostrati solo i prodotti presenti nel listino cliente."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/models/account_analytic_account.py:17
@@ -139,6 +158,22 @@ msgstr "Messaggio"
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_minimum_stock_qty
 msgid "Minimum Stock Quantity"
 msgstr "Quantità minima"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_order_line_id
+msgid "Order line"
+msgstr "Riga d'ordine"
+
+#. module: partner_contract_pricelist_cgt
+#: code:addons/partner_contract_pricelist_cgt/models/sale_order.py:39
+#, python-format
+msgid "Order should be confirmed before creating contract."
+msgstr "L'ordine deve essere confermato prima di poter creare un contratto."
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model,name:partner_contract_pricelist_cgt.model_stock_picking_package_preparation
+msgid "Package Preparation"
+msgstr "Preparazione pacco"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.account_analytic_account_form_form
@@ -183,6 +218,11 @@ msgid "Sales Contract Pricelist"
 msgstr "Listino"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di Vendita"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_discount
 msgid "Sell Discount (%)"
 msgstr "Sconto (%)"
@@ -196,6 +236,11 @@ msgstr "Prezzo"
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sequence
 msgid "Sequence"
 msgstr "Sequenza"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_stock_picking_package_preparation_show_only_contract_products
+msgid "Show only products from contract"
+msgstr "Mostra solo prodotti nel listino cliente"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_uom_id
