@@ -134,6 +134,21 @@ msgstr "Listino non valido\n"
 "La quantità minima in stock deve essere maggiore di 0."
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_istat_revaluation_enabled
+msgid "Istat revaluation"
+msgstr "Rivalutazione Istat"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_istat_revaluation_percentage
+msgid "Istat revaluation (%)"
+msgstr "Percentuale rivalutazione Istat (%)"
+
+#. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_istat_revaluation_year
+msgid "Istat revaluation year"
+msgstr "Anno rivalutazione Istat"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist___last_update
 msgid "Last Modified on"
 msgstr "Ultima modifica il"
