@@ -121,7 +121,7 @@ msgstr "ID"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,help:partner_contract_pricelist_cgt.field_stock_picking_package_preparation_show_only_contract_products
 msgid "If checked, only the products in the partner contract will be shown."
-msgstr "Se abilitato, verranno mostrati solo i prodotti presenti nel listino cliente."
+msgstr "Se abilitato, in 'Aggiungi una riga' verranno mostrati solo i prodotti presenti nel listino cliente."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/models/account_analytic_account.py:17
