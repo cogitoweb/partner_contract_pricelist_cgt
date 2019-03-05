@@ -66,5 +66,29 @@ class PricelistProductProduct(models.Model):
         # no results from contract, or no contract at all.
         # call super() and search on partner/default pricelist,
         # or get sell price from product template
-        pid = contract_id.partner_id if contract_id else partner_id
-        return super(PricelistProductProduct, self).get_product_sale_price_unit(pid, date)
+        p_id = contract_id.partner_id if contract_id else partner_id
+        return super(PricelistProductProduct, self).get_product_sale_price_unit(p_id, date)
+
+
+    @api.multi
+    def get_product_pricelist_discount(self, contract_id):
+        self.ensure_one()
+
+        # alias
+        Pricelist = self.env['sale.contract.pricelist']
+
+        if not contract_id:
+            # how should I answer you?
+            return 0
+
+        # get discount from pricelist
+        res_pricelist = Pricelist.search([
+            ('analytic_account_id', '=', contract_id.id),
+            ('product_id', '=', self.id)
+        ], order='sequence')
+
+        # return discount or zero
+        if res_pricelist:
+            return res_pricelist[0].sell_discount
+        else:
+            return 0
