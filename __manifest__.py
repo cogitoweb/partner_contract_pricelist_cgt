@@ -52,7 +52,7 @@
         'views/product_template.xml',
         'views/sale_contract_pricelist.xml',
         'views/sale_order.xml',
-        # 'views/stock_picking_package_preparation.xml',
+        'views/stock_picking_package_preparation.xml',
 
         # wizard
         'wizard/istat_revaluation.xml'

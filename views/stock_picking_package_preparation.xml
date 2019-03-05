@@ -10,6 +10,7 @@
             <field name="priority">45</field>
             <field name="arch" type="xml">
 
+                <!-- context for product search filter -->
                 <xpath expr="//field[@name='line_ids']/form//field[@name='product_id']" position="attributes">
                     <attribute name="context">{'contract_id': contract_id, 'show_only_contract_products': True}</attribute>
                 </xpath>

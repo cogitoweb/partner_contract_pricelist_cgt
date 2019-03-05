@@ -4,4 +4,4 @@ import product_product
 import product_template
 import sale_contract_pricelist
 import sale_order
-# import stock_picking_package_preparation
+import stock_picking_package_preparation
