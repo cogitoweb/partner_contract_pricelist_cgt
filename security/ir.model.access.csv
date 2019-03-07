@@ -6,3 +6,5 @@ access_sale_contract_pricelist_account_user,sale.contract.pricelist.account.user
 access_sale_contract_pricelist_account_manager,sale.contract.pricelist.account.manager,model_sale_contract_pricelist,account.group_account_manager,1,1,1,1
 ,,,,,,,
 access_sale_contract_pricelist_system_user,sale.contract.pricelist.user.all,model_sale_contract_pricelist,base.group_user,1,0,0,0
+,,,,,,,
+access_sale_manager_package_preparation_line,access_sale_manager_package_preparation_line,model_stock_picking_package_preparation_line,sales_team.group_sale_manager,1,0,0,0
