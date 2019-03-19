@@ -32,6 +32,7 @@
                     </group>
                     <group>
                         <label string="Select the sale order and remove the lines you don't want to add to this contract."/>
+                        <label string="Lines already added are automatically hidden."/>
                     </group>
 
                     <footer>
