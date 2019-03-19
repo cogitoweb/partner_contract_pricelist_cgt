@@ -25,8 +25,11 @@
     'summary': "Partner Contract Pricelist",
 
     'description': """
-        This module adds following functionality :
-            1) It adds "Product Pricelist" tab in Sales/Sales/Contracts form to configure Products.
+        This module add the following functionality:
+            * New tab "Product Pricelist" in Sales/Sales/Contracts form to configure Products
+            * Generate a Contract from a Sale Order
+            * Istat revaluation for contracts
+            * Import a Sale Order line to contract
     """,
 
     'author': "Cogito",
