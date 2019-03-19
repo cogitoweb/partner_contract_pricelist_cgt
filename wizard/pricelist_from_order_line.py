@@ -43,7 +43,7 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
             return SaleOrderLine
 
         # all lines from this order
-        order_line_ids = SaleOrderLine.search([('order_id', '=', order_id)])
+        order_line_ids = SaleOrderLine.search([('order_id', '=', order_id.id)])
 
         # check if already used in pricelist
         linked_pricelist_ids = Pricelist.search([
