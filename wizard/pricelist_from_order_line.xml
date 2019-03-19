@@ -11,8 +11,9 @@
 
                 <form string="">
                     <group>
-                        <field name="order_id" options="{'no_open': 1, 'no_create_edit': 1}" />
+                        <field name="order_id" options="{'no_open': 1, 'no_create_edit': 1}" required="1" />
                         <field name="contract_id" invisible="1" />
+                        <field name="pipe_list_ids" invisible="1" />
                     </group>
                     <group>
                         <field name="order_line_ids" nolabel="1" options="{'no_open': 1, 'no_create_edit': 1}">
