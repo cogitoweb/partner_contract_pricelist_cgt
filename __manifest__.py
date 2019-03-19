@@ -55,7 +55,8 @@
         'views/stock_picking_package_preparation.xml',
 
         # wizard
-        'wizard/istat_revaluation.xml'
+        'wizard/istat_revaluation.xml',
+        'wizard/pricelist_from_order_line.xml',
     ],
 
     'installable': True,
