@@ -12,6 +12,7 @@
                 <form string="">
                     <group>
                         <field name="order_id" options="{'no_open': 1, 'no_create_edit': 1}" />
+                        <field name="contract_id" invisible="1" />
                     </group>
                     <group>
                         <field name="order_line_ids" nolabel="1" options="{'no_open': 1, 'no_create_edit': 1}">
@@ -27,6 +28,9 @@
                                 <field name="price_subtotal"/>
                             </tree>
                         </field>
+                    </group>
+                    <group>
+                        <label string="Select the sale order and remove the lines you don't want to add to this contract."/>
                     </group>
 
                     <footer>

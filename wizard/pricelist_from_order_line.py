@@ -13,16 +13,28 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
     _name = 'wizard.pricelist_from_order_line'
 
 
+    # Default methods
+
+    def _get_contract_id(self):
+        return self.env['account.analytic.account'].browse(self._context.get('active_id'))
+
+
     # Fields declaration
 
     order_id = fields.Many2one(
-        string='Order',
+        string='Sale Order',
         comodel_name='sale.order',
     )
 
     order_line_ids = fields.Many2many(
-        string='Order lines',
+        string='Sale Order lines',
         comodel_name='sale.order.line',
+    )
+
+    contract_id = fields.Many2one(
+        string='Contract',
+        comodel_name='account.analytic.account',
+        default=_get_contract_id,
     )
 
 
