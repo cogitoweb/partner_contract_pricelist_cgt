@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- wizard form -->
+        <record id="view_pricelist_from_order_line_form" model="ir.ui.view">
+            <field name="name">Pricelist From Order Line Wizard</field>
+            <field name="model">wizard.pricelist_from_order_line</field>
+            <field name="priority">40</field>
+            <field name="arch" type="xml">
+
+                <form string="">
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                        </group>
+                        <field name="order_line_ids" nolabel="1" options="{'no_open': 1, 'no_create_edit': 1}">
+                            <tree string="order lines" create="0" edit="0" delete="0">
+                                <field name="order_id"/>
+                                <field name="product_id"/>
+                                <field name="name"/>
+                                <field name="product_uom_qty"/>
+                                <field name="product_uom"/>
+                                <field name="price_unit"/>
+                                <field name="tax_id"/>
+                                <field name="discount"/>
+                                <field name="price_subtotal"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                    <footer>
+                        <button name="action_add_to_pricelist" type="object" string="Add selected" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+
+            </field>
+        </record>
+
+
+        <!-- action -->
+        <record id="view_pricelist_from_order_line_action" model="ir.actions.act_window">
+            <field name="name">Add from Order line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.pricelist_from_order_line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_pricelist_from_order_line_form"/>
+            <field name="target">new</field>
+        </record>
+
+
+        <record id="view_pricelist_from_order_line_menu" model="ir.values">
+            <field name="name">Add from Order line</field>
+            <field name="model">account.analytic.account</field>
+            <field name="key" >action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,%d' % view_pricelist_from_order_line_action"/>
+        </record>
+
+    </data>
+</odoo>
