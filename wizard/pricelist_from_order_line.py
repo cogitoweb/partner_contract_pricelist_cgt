@@ -24,6 +24,7 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
     order_id = fields.Many2one(
         string='Sale Order',
         comodel_name='sale.order',
+        domain="[('state', 'in', ('sale', 'done'))]"
     )
 
     order_line_ids = fields.Many2many(

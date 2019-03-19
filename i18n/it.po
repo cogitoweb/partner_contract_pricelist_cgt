@@ -181,7 +181,7 @@ msgstr "Ultima modifica il"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_from_order_line_form
 msgid "Lines already added are automatically hidden."
-msgstr "Le linee già aggiunte vengono automaticamente nascoste."
+msgstr "Le righe d'ordine già aggiunte ad un contratto vengono automaticamente nascoste."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/pricelist_from_order_line.py:140
@@ -283,7 +283,7 @@ msgstr "Ordine di Vendita"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_from_order_line_form
 msgid "Select the sale order and remove the lines you don't want to add to this contract."
-msgstr "Seleziona l'Ordine di vendita e rimuovi le righe che non vuoi aggiungere a questo contratto."
+msgstr "Seleziona l'ordine di vendita e rimuovi le righe che non vuoi aggiungere a questo contratto."
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_discount

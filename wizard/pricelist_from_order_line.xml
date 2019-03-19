@@ -24,9 +24,9 @@
                                 <field name="product_uom_qty"/>
                                 <field name="product_uom"/>
                                 <field name="price_unit"/>
-                                <field name="tax_id"/>
+                                <!-- <field name="tax_id"/> -->
                                 <field name="discount"/>
-                                <field name="price_subtotal"/>
+                                <!-- <field name="price_subtotal"/> -->
                             </tree>
                         </field>
                     </group>
