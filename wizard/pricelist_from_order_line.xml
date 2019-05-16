@@ -46,6 +46,7 @@
 
 
         <!-- action -->
+        <!-- button added in views/account_analytic_account.xml -->
         <record id="view_pricelist_from_order_line_action" model="ir.actions.act_window">
             <field name="name">Add from Order line</field>
             <field name="type">ir.actions.act_window</field>
@@ -54,15 +55,6 @@
             <field name="view_mode">form</field>
             <field name="view_id" ref="view_pricelist_from_order_line_form"/>
             <field name="target">new</field>
-        </record>
-
-
-        <record id="view_pricelist_from_order_line_menu" model="ir.values">
-            <field name="name">Add from Order line</field>
-            <field name="model">account.analytic.account</field>
-            <field name="key" >action</field>
-            <field name="key2">client_action_multi</field>
-            <field name="value" eval="'ir.actions.act_window,%d' % view_pricelist_from_order_line_action"/>
         </record>
 
     </data>

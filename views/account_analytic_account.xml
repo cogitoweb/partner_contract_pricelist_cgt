@@ -10,6 +10,11 @@
             <field name="priority">40</field>
             <field name="arch" type="xml">
 
+                <!-- call pricelist_from_order_line wizard  -->
+                <xpath expr="//header" position="inside">
+                    <button string="Add from Sale Order" type="action" name="%(view_pricelist_from_order_line_action)d" />
+                </xpath>
+
                 <!-- pricelist inline-tree -->
                 <page name="recurring_invoices_tab" position="before">
                     <page name="product_pricelist" string="Pricelist Lines">
