@@ -58,29 +58,6 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
         self.pipe_list_ids = '|'.join([str(x) for x in self.order_line_ids.ids])
 
 
-    def _get_order_line_ids(self, order_id):
-        Pricelist = self.env['sale.contract.pricelist']
-        SaleOrderLine = self.env['sale.order.line']
-
-        # return nothing
-        if not order_id:
-            return SaleOrderLine
-
-        # all lines from this order
-        order_line_ids = SaleOrderLine.search([('order_id', '=', order_id.id)])
-
-        # check if already used in pricelist
-        linked_pricelist_ids = Pricelist.search([
-            ('order_line_id', 'in', order_line_ids.ids)
-        ])
-
-        # get sale order lines to exclude
-        order_line_to_exlude_ids = linked_pricelist_ids.mapped('order_line_id')
-
-        # return diff
-        return order_line_ids - order_line_to_exlude_ids
-
-
     # Action methods
 
     @api.multi
@@ -114,17 +91,12 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
         list_of_int_ids = map(int, list_of_ids)
         order_line_ids = SaleOrderLine.browse(list_of_int_ids)
 
-        # filter out already added lines
-        linked_pricelist_ids = Pricelist.search([
-            ('order_line_id', 'in', order_line_ids.ids)
-        ])
-
-        order_line_to_exlude_ids = linked_pricelist_ids.mapped('order_line_id')
-        order_line_to_add_ids = order_line_ids - order_line_to_exlude_ids
+        # double check - filter out already added lines
+        clean_order_line_ids = order_line_ids.filtered(lambda x: not x.pricelist_id)
 
         # create pricelist lines
-        for order_line in order_line_to_add_ids:
-            Pricelist.create({
+        for order_line in clean_order_line_ids:
+            res = Pricelist.create({
                 'analytic_account_id': self.contract_id.id,
                 'product_id': order_line.product_id.id,
                 'description': order_line.name,
@@ -132,8 +104,10 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
                 'minimum_stock_qty': order_line.product_uom_qty,
                 'sell_price': order_line.price_unit,
                 'sell_discount': order_line.discount,
-                'order_line_id': order_line.id
             })
+
+            # set link
+            order_line.pricelist_id = res.id
 
         return {
             'type': 'ir.actions.act_window.message',
@@ -145,3 +119,21 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
                 'name': _('Close')
             }]
         }
+
+
+    # Business methods
+
+    def _get_order_line_ids(self, order_id):
+        SaleOrderLine = self.env['sale.order.line']
+
+        # return nothing
+        if not order_id:
+            return SaleOrderLine
+
+        # all lines from this order, not already added anywhere
+        order_line_ids = SaleOrderLine.search([
+            ('order_id', '=', order_id.id),
+            ('pricelist_id', '=', False)
+        ])
+
+        return order_line_ids
