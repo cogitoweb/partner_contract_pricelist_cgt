@@ -67,19 +67,8 @@ class PricelistSaleOrder(models.Model):
         new_contract.name = new_contract.generate_contract_name(new_contract.id)
 
         # copy order lines as contract pricelist lines
-        Pricelist = self.env['sale.contract.pricelist']
         for order_line in self.order_line:
-
-            Pricelist.create({
-                'analytic_account_id': new_contract.id,
-                'product_id': order_line.product_id.id,
-                'description': order_line.name,
-                'product_uom_id': order_line.product_uom.id,
-                'minimum_stock_qty': order_line.product_uom_qty,
-                'sell_price': order_line.price_unit,
-                'sell_discount': order_line.discount,
-                'order_line_id': order_line.id
-            })
+            x = new_contract.add_pricelist_from_sale_order_line(order_line)
 
         # link sale_order to contract
         self.contract_id = new_contract.id

@@ -101,18 +101,7 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
 
         # create pricelist lines
         for order_line in clean_order_line_ids:
-            res = Pricelist.create({
-                'analytic_account_id': self.contract_id.id,
-                'product_id': order_line.product_id.id,
-                'description': order_line.name,
-                'product_uom_id': order_line.product_uom.id,
-                'minimum_stock_qty': order_line.product_uom_qty,
-                'sell_price': order_line.price_unit,
-                'sell_discount': order_line.discount,
-            })
-
-            # set link
-            order_line.pricelist_id = res.id
+            x = self.contract_id.add_pricelist_from_sale_order_line(order_line)
 
         return {
             'type': 'ir.actions.act_window.message',
