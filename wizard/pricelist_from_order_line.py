@@ -65,8 +65,21 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
         Pricelist = self.env['sale.contract.pricelist']
         SaleOrderLine = self.env['sale.order.line']
 
-        # nothing to add
-        if not self.pipe_list_ids:
+        if self.order_line_ids:
+            # easy
+            order_line_ids = self.order_line_ids
+
+        elif self.pipe_list_ids:
+            # cant use self.order_line_ids directly since at this
+            # point is empty for some reason. Used onchange() to convert
+            # self.order_line_ids to list of ids, piped with '|'.
+            # here we split the string, convert values to int and browse them.
+            list_of_ids = self.pipe_list_ids.split('|')
+            list_of_int_ids = map(int, list_of_ids)
+            order_line_ids = SaleOrderLine.browse(list_of_int_ids)
+
+        else:
+            # nothing to add
             return {
                 'type': 'ir.actions.act_window.message',
                 'title': _('Message'),
@@ -82,14 +95,6 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
                 'message': _("No contract selected."),
                 'close_button_title': _('Close')
             }
-
-        # cant use self.order_line_ids directly since at this
-        # point is empty for some reason. Used onchange() to convert
-        # self.order_line_ids to list of ids, piped with '|'.
-        # here we split the string, convert values to int and browse them.
-        list_of_ids = self.pipe_list_ids.split('|')
-        list_of_int_ids = map(int, list_of_ids)
-        order_line_ids = SaleOrderLine.browse(list_of_int_ids)
 
         # double check - filter out already added lines
         clean_order_line_ids = order_line_ids.filtered(lambda x: not x.pricelist_id)
