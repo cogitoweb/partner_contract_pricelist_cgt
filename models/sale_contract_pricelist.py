@@ -2,6 +2,8 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
+import odoo.addons.decimal_precision as dp
+
 import pprint
 import logging
 _logger = logging.getLogger(__name__)
@@ -43,12 +45,12 @@ class SaleContractPricelist(models.Model):
 
     sell_price = fields.Float(
         string='Sell Price',
-        digits=(10, 3)
+        digits=dp.get_precision('Product Price')
     )
 
     sell_discount = fields.Float(
         string='Sell Discount (%)',
-        digits=(6, 3), default=0.0
+        digits=(4, 1), default=0.0
     )
 
     sequence = fields.Integer(
