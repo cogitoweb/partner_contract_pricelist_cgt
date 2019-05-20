@@ -62,7 +62,6 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
 
     @api.multi
     def action_add_to_pricelist(self):
-        Pricelist = self.env['sale.contract.pricelist']
         SaleOrderLine = self.env['sale.order.line']
 
         if self.order_line_ids:
