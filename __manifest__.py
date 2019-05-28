@@ -50,16 +50,16 @@
         # security
         'security/ir.model.access.csv',
 
+        # wizard
+        'wizard/istat_revaluation.xml',
+        'wizard/pricelist_from_order_line.xml',
+
         # views
         'views/account_analytic_account.xml',
         'views/product_template.xml',
         'views/sale_contract_pricelist.xml',
         'views/sale_order.xml',
         'views/stock_picking_package_preparation.xml',
-
-        # wizard
-        'wizard/istat_revaluation.xml',
-        'wizard/pricelist_from_order_line.xml',
     ],
 
     'installable': True,
