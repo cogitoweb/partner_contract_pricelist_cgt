@@ -44,6 +44,10 @@ class AnalyticAccount(models.Model):
         if not order_line_id:
             return False
 
+        # already added somewhere
+        if order_line_id.pricelist_id:
+            return False
+
         # create pricelist from order line
         # [TODO] _prepare_vals()
         res = self.env['sale.contract.pricelist'].create({
