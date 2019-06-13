@@ -17,4 +17,5 @@ class PricelistSaleOrderLine(models.Model):
         string='Pricelist',
         comodel_name='sale.contract.pricelist',
         ondelete='set null',
+        copy=False,
     )
