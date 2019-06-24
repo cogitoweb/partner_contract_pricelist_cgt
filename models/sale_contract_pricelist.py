@@ -24,6 +24,11 @@ class SaleContractPricelist(models.Model):
         ondelete="cascade"
     )
 
+    partner_id = fields.Many2one(
+        related='analytic_account_id.partner_id',
+        store=True
+    )
+
     product_id = fields.Many2one(
         comodel_name='product.product',
         string='Product',
@@ -50,14 +55,14 @@ class SaleContractPricelist(models.Model):
 
     sell_discount = fields.Float(
         string='Sell Discount (%)',
-        digits=(4, 1), default=0.0
+        digits=(4, 1),
+        default=0.0
     )
 
     sequence = fields.Integer(
         string='Sequence',
         default=20
     )
-
 
     # Constraints and onchanges
 

@@ -10,6 +10,7 @@
             <field name="arch" type="xml">
 
                 <tree string="Sale Contract pricelist" default_order="analytic_account_id desc" create="0" delete="0">
+                    <field name="partner_id" widget="many2one_clickable" />
                     <field name="analytic_account_id" widget="many2one_clickable" />
                     <field name="product_id" widget="many2one_clickable" />
                     <field name="product_uom_id" />
@@ -21,16 +22,34 @@
             </field>
         </record>
 
+        <record id="sale_contract_pricelist_search" model="ir.ui.view">
+            <field name="name">sale.contract.pricelist.search</field>
+            <field name="model">sale.contract.pricelist</field>
+            <field name="arch" type="xml">
+                <search string="pricelist search">
+
+                    <filter icon="terp-mail-message-new" string="Active contracts" name="active"
+                            domain="[('analytic_account_id.active', '=', True)]" />
+
+
+                    <field string="Partner" name="partner_id" />
+                    <field string="Contract" name="analytic_account_id" />
+                    <field string="Product" name="product_id" />
+                </search>
+            </field>
+        </record>
 
         <!-- action -->
         <record id="sale_contract_pricelist_action" model="ir.actions.act_window">
             <field name="name">Sale Contract pricelist</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.contract.pricelist</field>
-            <field name="domain">[('analytic_account_id.active', '=', True)]</field>
+            <field name="domain"></field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,pivot,graph</field>
             <field name="view_id" ref="sale_contract_pricelist_tree"/>
+            <field name="search_view_id" ref="sale_contract_pricelist_search"/>
+            <field name="context">{'search_default_active': True, 'use_nickname': True}</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Browse Contract pricelist
