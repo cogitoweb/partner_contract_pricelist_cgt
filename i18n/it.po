@@ -37,6 +37,11 @@ msgid "Add from Sale Order"
 msgstr "Aggiungi da Ordine di vendita"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.account_analytic_account_form_form
+msgid "Duplicate Listing"
+msgstr "Duplica Listino"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_from_order_line_form
 msgid "Add selected"
 msgstr "Aggiungi selezionati"
