@@ -53,6 +53,7 @@
         # wizard
         'wizard/istat_revaluation.xml',
         'wizard/pricelist_from_order_line.xml',
+        'wizard/duplicate_pricelist_from_contract.xml',
 
         # views
         'views/account_analytic_account.xml',

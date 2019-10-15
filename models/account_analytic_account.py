@@ -63,3 +63,52 @@ class AnalyticAccount(models.Model):
         # link new record to sale order line
         order_line_id.pricelist_id = res.id
         return res
+
+  # Business methods
+
+    @api.multi
+    def add_pricelist_from_price_line(self, price_line_id):
+        # @param order_line_id: sale.order.line() obj
+        # @out: False or sale.contract.pricelist() obj
+        self.ensure_one()
+
+        if not price_line_id:
+            return False
+
+        # create pricelist from price line
+        # [TODO] _prepare_vals()
+        res = self.env['sale.contract.pricelist'].create({
+            'analytic_account_id': self.id,
+            'product_id': price_line_id.product_tmpl_id.product_variant_id.id,
+            'description': price_line_id.product_tmpl_id.name,
+            'product_uom_id': price_line_id.product_tmpl_id.uom_id.id,
+            'minimum_stock_qty': price_line_id.min_quantity,
+            'sell_price': price_line_id.fixed_price,
+            'sell_discount': 0,
+        })
+
+        return res
+    
+    # Business methods
+    @api.multi
+    def add_pricelist_from_contarct_price_line(self, contract_price_line_id):
+        # @param order_line_id: sale.order.line() obj
+        # @out: False or sale.contract.pricelist() obj
+        self.ensure_one()
+
+        if not contract_price_line_id:
+            return False
+
+        # create pricelist from price line
+        # [TODO] _prepare_vals()
+        res = self.env['sale.contract.pricelist'].create({
+            'analytic_account_id': self.id,
+            'product_id': contract_price_line_id.product_id.product_variant_id.id,
+            'description': contract_price_line_id.description,
+            'product_uom_id': contract_price_line_id.product_uom_id.id,
+            'minimum_stock_qty': contract_price_line_id.minimum_stock_qty,
+            'sell_price': contract_price_line_id.sell_price,
+            'sell_discount': contract_price_line_id.sell_discount,
+        })
+
+        return res
