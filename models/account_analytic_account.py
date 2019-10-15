@@ -68,7 +68,7 @@ class AnalyticAccount(models.Model):
 
     @api.multi
     def add_pricelist_from_price_line(self, price_line_id):
-        # @param order_line_id: sale.order.line() obj
+        # @param price_line_id: product.pricelist.item() obj
         # @out: False or sale.contract.pricelist() obj
         self.ensure_one()
 
@@ -92,7 +92,7 @@ class AnalyticAccount(models.Model):
     # Business methods
     @api.multi
     def add_pricelist_from_contarct_price_line(self, contract_price_line_id):
-        # @param order_line_id: sale.order.line() obj
+        # @param contract_price_line_id: sale.contract.pricelist() obj
         # @out: False or sale.contract.pricelist() obj
         self.ensure_one()
 

@@ -77,7 +77,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
 
     @api.onchange('pricelist_contract_line_ids')
     def _onchange_pricelist_contract_line_ids(self):
-        # can't use self.pricelist_line_ids in action, so we create
+        # can't use self.pricelist_contract_line_ids in action, so we create
         # a piped string with the ids
         self.pipe_contract_list_ids = '|'.join([str(x) for x in self.pricelist_contract_line_ids.ids])
 
