@@ -49,7 +49,6 @@ class AnalyticAccount(models.Model):
             return False
 
         # create pricelist from order line
-        # [TODO] _prepare_vals()
         res = self.env['sale.contract.pricelist'].create({
             'analytic_account_id': self.id,
             'product_id': order_line_id.product_id.id,
@@ -76,7 +75,6 @@ class AnalyticAccount(models.Model):
             return False
 
         # create pricelist from price line
-        # [TODO] _prepare_vals()
         res = self.env['sale.contract.pricelist'].create({
             'analytic_account_id': self.id,
             'product_id': price_line_id.product_tmpl_id.product_variant_id.id,
@@ -89,7 +87,6 @@ class AnalyticAccount(models.Model):
 
         return res
     
-    # Business methods
     @api.multi
     def add_pricelist_from_contarct_price_line(self, contract_price_line_id):
         # @param contract_price_line_id: sale.contract.pricelist() obj
@@ -100,7 +97,6 @@ class AnalyticAccount(models.Model):
             return False
 
         # create pricelist from price line
-        # [TODO] _prepare_vals()
         res = self.env['sale.contract.pricelist'].create({
             'analytic_account_id': self.id,
             'product_id': contract_price_line_id.product_id.product_variant_id.id,

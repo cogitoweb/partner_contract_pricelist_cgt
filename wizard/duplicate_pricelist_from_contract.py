@@ -55,19 +55,16 @@ class DuplicatePricelistFromContract(models.TransientModel):
         string='list_ids',
     )
 
-
     # Constraints and onchanges
     @api.onchange('pricelist_id')
     def _onchange_pricelist_id(self):
         line_ids = self._get_pricelist_line_ids(self.pricelist_id)
         self.pricelist_line_ids = line_ids.ids
     
-    # Constraints and onchanges
     @api.onchange('contract_id')
     def _onchange_contract_line_ids(self):
         pipe_list_ids = self._get_contract_pricelist_line_ids(self.contract_id)
         self.pricelist_contract_line_ids = pipe_list_ids.ids
-
 
     @api.onchange('pricelist_line_ids')
     def _onchange_pricelist_line_ids(self):
@@ -185,7 +182,6 @@ class DuplicatePricelistFromContract(models.TransientModel):
             }]
         }
         #//////////////////////// END CONTRACT PRICE  //////////////////////////////       
-
 
     # Business methods listing price
     def _get_pricelist_line_ids(self, pricelist_id):
