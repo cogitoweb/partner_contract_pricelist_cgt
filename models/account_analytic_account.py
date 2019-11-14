@@ -32,7 +32,6 @@ class AnalyticAccount(models.Model):
         string='Istat revaluation (%)',
     )
 
-
     # Business methods
 
     @api.multi
@@ -53,7 +52,7 @@ class AnalyticAccount(models.Model):
             'analytic_account_id': self.id,
             'product_id': order_line_id.product_id.id,
             'description': order_line_id.name,
-            'product_uom_id': order_line_id.product_uom.id,
+            'product_uom_id': order_line_id.product_id.product_tmpl_id.product_uom.id,
             'minimum_stock_qty': order_line_id.product_uom_qty,
             'sell_price': order_line_id.price_unit,
             'sell_discount': order_line_id.discount,
@@ -62,8 +61,6 @@ class AnalyticAccount(models.Model):
         # link new record to sale order line
         order_line_id.pricelist_id = res.id
         return res
-
-  # Business methods
 
     @api.multi
     def add_pricelist_from_price_line(self, price_line_id):
@@ -74,8 +71,19 @@ class AnalyticAccount(models.Model):
         if not price_line_id:
             return False
 
+        SaleContractPricelist = self.env['sale.contract.pricelist']
+
+        # check exist product in pricelist
+        exist_product = SaleContractPricelist.search([
+            ('analytic_account_id', '=', self.id),
+            ('product_id', '=', price_line_id.product_tmpl_id.product_variant_id.id)
+        ])
+
+        if exist_product:
+            return exist_product
+
         # create pricelist from price line
-        res = self.env['sale.contract.pricelist'].create({
+        res = SaleContractPricelist.create({
             'analytic_account_id': self.id,
             'product_id': price_line_id.product_tmpl_id.product_variant_id.id,
             'description': price_line_id.product_tmpl_id.name,
@@ -86,7 +94,7 @@ class AnalyticAccount(models.Model):
         })
 
         return res
-    
+
     @api.multi
     def add_pricelist_from_contarct_price_line(self, contract_price_line_id):
         # @param contract_price_line_id: sale.contract.pricelist() obj
@@ -96,10 +104,21 @@ class AnalyticAccount(models.Model):
         if not contract_price_line_id:
             return False
 
+        SaleContractPricelist = self.env['sale.contract.pricelist']
+
+        # check exist product in pricelist
+        exist_product = SaleContractPricelist.search([
+            ('analytic_account_id', '=', self.id),
+            ('product_id', '=', contract_price_line_id.product_id.id)
+        ])
+
+        if exist_product:
+            return exist_product
+
         # create pricelist from price line
-        res = self.env['sale.contract.pricelist'].create({
+        res = SaleContractPricelist.create({
             'analytic_account_id': self.id,
-            'product_id': contract_price_line_id.product_id.product_variant_id.id,
+            'product_id': contract_price_line_id.product_id.id,
             'description': contract_price_line_id.description,
             'product_uom_id': contract_price_line_id.product_uom_id.id,
             'minimum_stock_qty': contract_price_line_id.minimum_stock_qty,
