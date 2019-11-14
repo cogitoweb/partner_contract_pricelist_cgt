@@ -17,6 +17,8 @@ class DuplicatePricelistFromContract(models.TransientModel):
         return self.env['account.analytic.account'].browse(self._context.get('active_id'))
 
     # Fields declaration
+
+    # current active contract
     default_contract_id = fields.Many2one(
         string='Contract',
         comodel_name='account.analytic.account',
@@ -24,6 +26,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
         default=_get_contract_id,
     )
 
+    # import from contract
     contract_id = fields.Many2one(
         string='Contract',
         comodel_name='account.analytic.account',
@@ -46,7 +49,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
         comodel_name='sale.contract.pricelist',
         relation='pricelist_wizard_contract_line_rel'
     )
-    
+
     pipe_list_ids = fields.Char(
         string='list_ids',
     )
@@ -60,7 +63,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
     def _onchange_pricelist_id(self):
         line_ids = self._get_pricelist_line_ids(self.pricelist_id)
         self.pricelist_line_ids = line_ids.ids
-    
+
     @api.onchange('contract_id')
     def _onchange_contract_line_ids(self):
         pipe_list_ids = self._get_contract_pricelist_line_ids(self.contract_id)
@@ -81,7 +84,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
     # Action methods
     @api.multi
     def action_add_pricelist(self):
-        
+
         # //////////////////////// VALIDATION  //////////////////////////////
         #no contract selected
         if not self.contract_id and self.pricelist_id and not self.default_contract_id:
@@ -91,7 +94,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
                 'message': _("No contract selected."),
                 'close_button_title': _('Close')
             }
-        
+
         elif not self.contract_id and self.pricelist_id and not self.default_contract_id:
             # no pricelist selected
             return {
@@ -117,11 +120,11 @@ class DuplicatePricelistFromContract(models.TransientModel):
                 'message': _("You have to select only one field"),
                 'close_button_title': _('Close')
             }
-        
+
         #//////////////////////// END VALIDATION  //////////////////////////////
 
         #//////////////////////// LISTING PRICE  //////////////////////////////
-        
+
         ProductPriceItem = self.env['product.pricelist.item']
         pricelist_line_ids = self.pricelist_line_ids
         if self.pricelist_line_ids:
@@ -141,12 +144,12 @@ class DuplicatePricelistFromContract(models.TransientModel):
 
         # create pricelist lines
         for price_line in clean_price_line_ids:
-            x = self.default_contract_id.add_pricelist_from_price_line(price_line)
+            self.default_contract_id.add_pricelist_from_price_line(price_line)
 
         #//////////////////////// END LISTING PRICE  //////////////////////////////
 
         #//////////////////////// CONTRACT PRICE  //////////////////////////////
-        
+
         pricelist_contract_line_ids = self.pricelist_contract_line_ids
 
         # add pricelist line from contract
@@ -168,8 +171,12 @@ class DuplicatePricelistFromContract(models.TransientModel):
 
         # create pricelist lines
         for price_contract_line in clean_price_contract_line_ids:
+            self.default_contract_id.add_pricelist_from_contarct_price_line(price_contract_line)
 
-            x = self.default_contract_id.add_pricelist_from_contarct_price_line(price_contract_line)
+        if self.contract_id:
+            _logger.info("Imported pricelist in contract %s from contract %s" % (self.default_contract_id.id, self.contract_id.id))
+        else:
+            _logger.info("Imported pricelist in contract %s from generic pricelist %s" % (self.default_contract_id.id, self.pricelist_id))
 
         return {
             'type': 'ir.actions.act_window.message',
@@ -197,7 +204,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
         ])
 
         return pricelist_line_ids
-    
+
     # Business methods contract price
     def _get_contract_pricelist_line_ids(self, contract_line_ids):
         ProductContractPriceItem = self.env['sale.contract.pricelist']
