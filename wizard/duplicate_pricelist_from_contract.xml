@@ -10,7 +10,7 @@
                     <group>
                         <field name="pricelist_id" options="{'no_open': 1, 'no_create': 1, 'no_create_edit': 1}" />
                         <field name="default_contract_id" invisible="1" />
-                        <field name="contract_id" ioptions="{'no_open': 1, 'no_create': 1, 'no_create_edit': 1}" />
+                        <field name="contract_id" options="{'no_open': 1, 'no_create': 1, 'no_create_edit': 1}" />
                         <field name="pipe_list_ids" invisible="1" />
                         <field name="pipe_contract_list_ids" invisible="1" />
                     </group>
@@ -34,7 +34,7 @@
                         </field>
                     </group>
                     <footer>
-                        <button name="action_add_pricelist" type="object" string="Add Priselist" class="oe_highlight"/>
+                        <button name="action_add_pricelist" type="object" string="Add Pricelist" class="oe_highlight"/>
                         <button special="cancel" string="Cancel"/>
                     </footer>
                 </form>
