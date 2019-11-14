@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- wizard form -->
+        <record id="view_duplicate_pricelist_from_contract_action_form" model="ir.ui.view">
+            <field name="name">Duplicate Listing</field>
+            <field name="model">wizard.duplicate_pricelist_from_contract</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <group>
+                        <field name="pricelist_id" options="{'no_open': 1, 'no_create': 1, 'no_create_edit': 1}" />
+                        <field name="default_contract_id" invisible="1" />
+                        <field name="contract_id" options="{'no_open': 1, 'no_create': 1, 'no_create_edit': 1}" />
+                        <field name="pipe_list_ids" invisible="1" />
+                        <field name="pipe_contract_list_ids" invisible="1" />
+                    </group>
+                    <group>
+                        <field name="pricelist_line_ids" attrs="{'invisible': [('pricelist_id','=', False)]}" nolabel="1" options="{'no_open': 1, 'no_create_edit': 1}">
+                            <tree string="Pricelist lines" create="0" edit="0" delete="1">
+                                <field name="pricelist_id"/>
+                                <field name="product_id"/>
+                                <field name="name"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="pricelist_contract_line_ids"  attrs="{'invisible': [('contract_id','=', False)]}" nolabel="1" options="{'no_open': 1, 'no_create_edit': 1}">
+                            <tree string="Pricelist Contract lines" create="0" edit="0" delete="1">
+                                <field name="product_id"/>
+                                <field name="description"/>
+                                <field name="sell_price"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_add_pricelist" type="object" string="Add Pricelist" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <!-- action -->
+        <!-- button added in views/account_analytic_account.xml -->
+        <record id="duplicate_pricelist_from_contract_action" model="ir.actions.act_window">
+            <field name="name">Duplicate Listing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.duplicate_pricelist_from_contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_duplicate_pricelist_from_contract_action_form"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

@@ -13,6 +13,8 @@
                 <!-- call pricelist_from_order_line wizard  -->
                 <xpath expr="//header" position="inside">
                     <button string="Add from Sale Order" type="action" name="%(view_pricelist_from_order_line_action)d" />
+                    <!-- Duplicate Listing from general listin or selected contract-->
+                    <button string="Duplicate Listing" type="action" name="%(duplicate_pricelist_from_contract_action)d"/>
                 </xpath>
 
                 <!-- pricelist inline-tree -->
