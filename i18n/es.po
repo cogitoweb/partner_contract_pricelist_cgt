@@ -378,7 +378,7 @@ msgstr "Sale Order lines"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_contract_pricelist
 msgid "Sales Contract Pricelist"
-msgstr "Sales Contract Pricelist"
+msgstr "Lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_order

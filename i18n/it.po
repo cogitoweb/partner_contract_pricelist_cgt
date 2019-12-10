@@ -60,7 +60,7 @@ msgstr "Contratto"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
 msgid "Apply"
-msgstr "Salva"
+msgstr "Applica"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.actions.act_window,name:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_action
@@ -312,6 +312,7 @@ msgid "Package Preparation Line"
 msgstr "Linea preparazione pacco"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_partner_id
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.sale_contract_pricelist_search
 msgid "Partner"
 msgstr "Cliente"
