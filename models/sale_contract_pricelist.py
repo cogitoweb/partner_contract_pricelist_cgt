@@ -35,6 +35,13 @@ class SaleContractPricelist(models.Model):
         domain=[('sale_ok', '=', True)]
     )
 
+    product_tmpl_id = fields.Many2one(
+        string='Template',
+        comodel_name='product.template',
+        related='product_id.product_tmpl_id',
+        readonly=True
+    )
+
     product_uom_id = fields.Many2one(
         related='product_id.product_tmpl_id.uom_id',
         store=True
