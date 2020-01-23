@@ -52,7 +52,7 @@ class AnalyticAccount(models.Model):
             'analytic_account_id': self.id,
             'product_id': order_line_id.product_id.id,
             'description': order_line_id.name,
-            'product_uom_id': order_line_id.product_id.product_tmpl_id.product_uom.id,
+            'product_uom_id': order_line_id.product_id.product_tmpl_id.uom_id.id,
             'minimum_stock_qty': order_line_id.product_uom_qty,
             'sell_price': order_line_id.price_unit,
             'sell_discount': order_line_id.discount,
