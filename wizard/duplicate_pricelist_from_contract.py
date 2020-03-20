@@ -171,7 +171,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
 
         # create pricelist lines
         for price_contract_line in clean_price_contract_line_ids:
-            self.default_contract_id.add_pricelist_from_contarct_price_line(price_contract_line)
+            self.default_contract_id.add_pricelist_from_contract_price_line(price_contract_line)
 
         if self.contract_id:
             _logger.info("Imported pricelist in contract %s from contract %s" % (self.default_contract_id.id, self.contract_id.id))
