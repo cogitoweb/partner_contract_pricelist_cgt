@@ -31,6 +31,10 @@
                     <filter icon="terp-mail-message-new" string="Active contracts" name="active"
                             domain="[('analytic_account_id.active', '=', True)]" />
 
+                    <filter string="Sell price null" name="sell_price_null"
+                        domain="[('sell_price', '=', 0)]"
+                    />
+
                     <field string="Partner" name="partner_id" />
                     <field string="Contract" name="analytic_account_id" />
                     <field string="Product" name="product_id" />

@@ -431,6 +431,11 @@ msgid "Sell Price"
 msgstr "Prezzo"
 
 #. module: partner_contract_pricelist_cgt
+#: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.sale_contract_pricelist_search
+msgid "Sell price null"
+msgstr "Prezzo di vendita nullo"
+
+#. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sequence
 msgid "Sequence"
 msgstr "Sequenza"
