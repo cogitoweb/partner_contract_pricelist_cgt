@@ -29,27 +29,27 @@ msgstr "<span class=\"o_stat_text\">Contract lines</span>"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.sale_contract_pricelist_search
 msgid "Active contracts"
-msgstr "Active contracts"
+msgstr "Contratos activos"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_duplicate_pricelist_from_contract_action_form
 msgid "Add Pricelist"
-msgstr "Add Pricelist"
+msgstr "Agregar lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.actions.act_window,name:partner_contract_pricelist_cgt.view_pricelist_from_order_line_action
 msgid "Add from Order line"
-msgstr "Add from Order line"
+msgstr "Agregar desde la línea de pedido"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.account_analytic_account_form_form
 msgid "Add from Sale Order"
-msgstr "Add from Sale Order"
+msgstr "Agregar de la línea de venta"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_from_order_line_form
 msgid "Add selected"
-msgstr "Add selected"
+msgstr "Agregar seleccionados"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_account_analytic_account
@@ -66,12 +66,12 @@ msgstr "Aplicar"
 #: model:ir.actions.act_window,name:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_action
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_apply_istat_revaluation_form
 msgid "Apply Istat Revaluation"
-msgstr "Apply Istat Revaluation"
+msgstr "Aplicar revalorización de Istat"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.actions.act_window,help:partner_contract_pricelist_cgt.sale_contract_pricelist_action
 msgid "Browse Contract pricelist"
-msgstr "Browse Contract pricelist"
+msgstr "Examinar lista de precios de contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_duplicate_pricelist_from_contract_action_form
@@ -92,7 +92,7 @@ msgstr "Cancelar"
 #: code:addons/partner_contract_pricelist_cgt/wizard/pricelist_from_order_line.py:112
 #, python-format
 msgid "Close"
-msgstr "Close"
+msgstr "Cerrar"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_order_contract_id
@@ -109,13 +109,13 @@ msgstr "Contrato"
 #, python-format
 msgid "Contract has already been generated from this order.\n"
 "%s"
-msgstr "Contract has already been generated from this order.\n"
+msgstr "El contrato ya se generó a partir de este pedido.\n"
 "%s"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.menu,name:partner_contract_pricelist_cgt.sale_contract_pricelist_menu
 msgid "Contract lines"
-msgstr "Contract lines"
+msgstr "Líneas de contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_istat_revaluation_contract_ids
@@ -161,12 +161,12 @@ msgstr "Nombre a mostrar"
 #: model:ir.actions.act_window,name:partner_contract_pricelist_cgt.duplicate_pricelist_from_contract_action
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.account_analytic_account_form_form
 msgid "Duplicate Listing"
-msgstr "Duplicate Listing"
+msgstr "Listado duplicado"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_sale_order_form_inherit
 msgid "Generate contract"
-msgstr "Generate contract"
+msgstr "Generar contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_id
@@ -179,22 +179,22 @@ msgstr "ID"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,help:partner_contract_pricelist_cgt.field_stock_picking_package_preparation_show_only_contract_products
 msgid "If checked, only the products in the partner contract will be shown."
-msgstr "If checked, only the products in the partner contract will be shown."
+msgstr "Si está marcado, solo se mostrarán los productos en el contrato del socio."
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_istat_revaluation_enabled
 msgid "Istat revaluation"
-msgstr "Istat revaluation"
+msgstr "Revalorización de Istat"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_istat_revaluation_percentage
 msgid "Istat revaluation (%)"
-msgstr "Istat revaluation (%)"
+msgstr "Revalorización de Istat (%)"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_istat_revaluation_year
 msgid "Istat revaluation year"
-msgstr "Istat revaluation year"
+msgstr "Revalorización de Istat year"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist___last_update
@@ -224,18 +224,18 @@ msgstr "Última actualización el"
 #: code:addons/partner_contract_pricelist_cgt/wizard/duplicate_pricelist_from_contract.py:184
 #, python-format
 msgid "Lines added to contract pricelist"
-msgstr "Lines added to contract pricelist"
+msgstr "Líneas agregadas a la lista de precios del contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_from_order_line_form
 msgid "Lines already added are automatically hidden."
-msgstr "Lines already added are automatically hidden."
+msgstr "Las líneas ya agregadas se ocultan automáticamente."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/pricelist_from_order_line.py:108
 #, python-format
 msgid "Lines from sale order added to contract pricelist"
-msgstr "Lines from sale order added to contract pricelist"
+msgstr "Líneas de orden de venta agregadas a la lista de precios del contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/duplicate_pricelist_from_contract.py:93
@@ -249,7 +249,7 @@ msgstr "Lines from sale order added to contract pricelist"
 #: code:addons/partner_contract_pricelist_cgt/wizard/pricelist_from_order_line.py:107
 #, python-format
 msgid "Message"
-msgstr "Message"
+msgstr "Mensaje"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_minimum_stock_qty
@@ -261,25 +261,25 @@ msgstr "Cantidad mínima"
 #: code:addons/partner_contract_pricelist_cgt/wizard/pricelist_from_order_line.py:94
 #, python-format
 msgid "No contract selected."
-msgstr "No contract selected."
+msgstr "Ningún contrato seleccionado."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/duplicate_pricelist_from_contract.py:103
 #, python-format
 msgid "No pricelist selected."
-msgstr "No pricelist selected."
+msgstr "No hay lista de precios seleccionada."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/pricelist_from_order_line.py:85
 #, python-format
 msgid "No sale order lines selected."
-msgstr "No sale order lines selected."
+msgstr "No hay líneas de órdenes de venta seleccionadas."
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/models/sale_order.py:39
 #, python-format
 msgid "Order should be confirmed before creating contract."
-msgstr "Order should be confirmed before creating contract."
+msgstr "El pedido debe confirmarse antes de crear el contrato.."
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_stock_picking_package_preparation
@@ -300,52 +300,52 @@ msgstr "Socio"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.account_analytic_account_form_form
 msgid "Partner Pricelist"
-msgstr "Partner Pricelist"
+msgstr "Lista de precios para socios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_istat_revaluation_target_percentage
 msgid "Percentage (%)"
-msgstr "Percentage (%)"
+msgstr "Porcentaje (%)"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_duplicate_pricelist_from_contract_pricelist_contract_line_ids
 msgid "Price List Contract item"
-msgstr "Price List Contract item"
+msgstr "Lista de precios Artículo de contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_duplicate_pricelist_from_contract_pricelist_line_ids
 msgid "Price List item"
-msgstr "Price List item"
+msgstr "Elemento de lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_duplicate_pricelist_from_contract_pricelist_id
 msgid "Price Listing"
-msgstr "Price Listing"
+msgstr "Lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_order_line_pricelist_id
 msgid "Pricelist"
-msgstr "Pricelist"
+msgstr "Lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_duplicate_pricelist_from_contract_action_form
 msgid "Pricelist Contract lines"
-msgstr "Pricelist Contract lines"
+msgstr "Lista de precios Líneas de contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.account_analytic_account_form_form
 msgid "Pricelist Lines"
-msgstr "Pricelist Lines"
+msgstr "Líneas de lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_duplicate_pricelist_from_contract_action_form
 msgid "Pricelist lines"
-msgstr "Pricelist lines"
+msgstr "Líneas de lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_account_analytic_account_pricelist_ids
 msgid "Pricelists"
-msgstr "Pricelists"
+msgstr "Lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_product_product
@@ -368,22 +368,22 @@ msgstr "Sale Contract pricelist"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_pricelist_from_order_line_order_id
 msgid "Sale Order"
-msgstr "Sale Order"
+msgstr "Orden de venta"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_pricelist_from_order_line_order_line_ids
 msgid "Sale Order lines"
-msgstr "Sale Order lines"
+msgstr "Líneas de orden de venta"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_contract_pricelist
 msgid "Sales Contract Pricelist"
-msgstr "Lista de precios"
+msgstr "Lista de precios del contrato de venta"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_order
 msgid "Sales Order"
-msgstr "Pedido de venta"
+msgstr "Órdenes de venta"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_sale_order_line
@@ -398,12 +398,12 @@ msgstr "Select the sale order and remove the lines you don't want to add to this
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_discount
 msgid "Sell Discount (%)"
-msgstr "Sell Discount (%)"
+msgstr "Descuento de venta (%)"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_price
 msgid "Sell Price"
-msgstr "Sell Price"
+msgstr "Precio de venta"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sequence
@@ -413,7 +413,7 @@ msgstr "Secuencia"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_stock_picking_package_preparation_show_only_contract_products
 msgid "Show only products from contract"
-msgstr "Show only products from contract"
+msgstr "Mostrar solo productos del contrato"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_product_uom_id
@@ -423,19 +423,19 @@ msgstr "Unidad de medida"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_istat_revaluation_target_year
 msgid "Year"
-msgstr "Year"
+msgstr "Año"
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/duplicate_pricelist_from_contract.py:112
 #, python-format
 msgid "You have to select at least one field"
-msgstr "You have to select at least one field"
+msgstr "Tienes que seleccionar al menos un campo"
 
 #. module: partner_contract_pricelist_cgt
 #: code:addons/partner_contract_pricelist_cgt/wizard/duplicate_pricelist_from_contract.py:120
 #, python-format
 msgid "You have to select only one field"
-msgstr "You have to select only one field"
+msgstr "Tienes que seleccionar solo un campo"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_wizard_duplicate_pricelist_from_contract_pipe_contract_list_ids
@@ -447,12 +447,12 @@ msgstr "list_ids"
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.view_pricelist_from_order_line_form
 msgid "order lines"
-msgstr "order lines"
+msgstr "líneas de pedido"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.view,arch_db:partner_contract_pricelist_cgt.sale_contract_pricelist_search
 msgid "pricelist search"
-msgstr "pricelist search"
+msgstr "búsqueda de lista de precios"
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model,name:partner_contract_pricelist_cgt.model_wizard_duplicate_pricelist_from_contract
