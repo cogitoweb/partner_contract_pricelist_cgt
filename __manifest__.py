@@ -36,7 +36,7 @@
     'website': "http://www.cogitoweb.it",
 
     'category': "Tools",
-    'version': "10.0.2.2.0",
+    'version': "10.0.2.2.1",
 
     # any module necessary for this one to work correctly
     'depends': [
