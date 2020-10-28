@@ -21,7 +21,8 @@ class SaleContractPricelist(models.Model):
     analytic_account_id = fields.Many2one(
         comodel_name='account.analytic.account',
         string='Analytic Account',
-        ondelete="cascade"
+        ondelete="cascade",
+        auto_join=True,
     )
 
     partner_id = fields.Many2one(
@@ -32,7 +33,8 @@ class SaleContractPricelist(models.Model):
     product_id = fields.Many2one(
         comodel_name='product.product',
         string='Product',
-        domain=[('sale_ok', '=', True)]
+        domain=[('sale_ok', '=', True)],
+        auto_join=True,
     )
 
     product_tmpl_id = fields.Many2one(
