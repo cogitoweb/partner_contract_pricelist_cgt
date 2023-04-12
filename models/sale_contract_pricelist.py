@@ -21,7 +21,7 @@ class SaleContractPricelist(models.Model):
     analytic_account_id = fields.Many2one(
         comodel_name='account.analytic.account',
         string='Analytic Account',
-        ondelete="cascade",
+        ondelete='cascade',
         auto_join=True,
     )
 
@@ -35,6 +35,7 @@ class SaleContractPricelist(models.Model):
         string='Product',
         domain=[('sale_ok', '=', True)],
         auto_join=True,
+        required=True,
     )
 
     product_tmpl_id = fields.Many2one(
@@ -77,9 +78,9 @@ class SaleContractPricelist(models.Model):
 
     @api.one
     @api.constrains('sell_discount')
-    def _check_description(self):
+    def _check_sell_discount(self):
         if self.sell_discount < 0 or self.sell_discount > 100:
-            raise ValidationError("Sell Discount must be between 0 and 100")
+            raise ValidationError(_("Sell Discount must be between 0 and 100"))
 
 
     # CRUD methods (and name_get, name_search, ...) overrides

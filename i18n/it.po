@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-20 17:30+0000\n"
-"PO-Revision-Date: 2019-05-20 17:30+0000\n"
+"POT-Creation-Date: 2023-04-12 15:30+0000\n"
+"PO-Revision-Date: 2023-04-12 15:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -424,6 +424,12 @@ msgstr "Seleziona l'ordine di vendita e rimuovi le righe che non vuoi aggiungere
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_discount
 msgid "Sell Discount (%)"
 msgstr "Sconto (%)"
+
+#. module: partner_contract_pricelist_cgt
+#: code:addons/partner_contract_pricelist_cgt/models/sale_contract_pricelist.py:83
+#, python-format
+msgid "Sell Discount must be between 0 and 100"
+msgstr "Lo sconto deve essere compreso tra 0 e 100."
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.model.fields,field_description:partner_contract_pricelist_cgt.field_sale_contract_pricelist_sell_price
