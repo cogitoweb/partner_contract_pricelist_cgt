@@ -51,7 +51,8 @@ class SaleContractPricelist(models.Model):
     )
 
     minimum_stock_qty = fields.Integer(
-        string='Minimum Stock Quantity'
+        string='Minimum Stock Quantity',
+        group_operator='avg'
     )
 
     description = fields.Char(
@@ -60,13 +61,15 @@ class SaleContractPricelist(models.Model):
 
     sell_price = fields.Float(
         string='Sell Price',
-        digits=dp.get_precision('Product Price')
+        digits=dp.get_precision('Product Price'),
+        group_operator='avg'
     )
 
     sell_discount = fields.Float(
         string='Sell Discount (%)',
         digits=(4, 1),
-        default=0.0
+        default=0.0,
+        group_operator='avg'
     )
 
     sequence = fields.Integer(
