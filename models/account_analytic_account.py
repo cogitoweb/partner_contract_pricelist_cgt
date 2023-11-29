@@ -28,7 +28,7 @@ class AnalyticAccount(models.Model):
         string='Istat revaluation year',
     )
 
-    istat_revaluation_percentage = fields.Integer(
+    istat_revaluation_percentage = fields.Float(
         string='Istat revaluation (%)',
     )
 

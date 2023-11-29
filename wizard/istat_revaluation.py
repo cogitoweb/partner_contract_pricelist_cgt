@@ -36,7 +36,7 @@ class PricelistApplyIstatRevaluation(models.TransientModel):
         selection=_get_year_list
     )
 
-    target_percentage = fields.Integer(
+    target_percentage = fields.Float(
         string='Percentage (%)',
     )
 
