@@ -74,7 +74,7 @@ class PricelistPricelistFromOrderLine(models.TransientModel):
             # self.order_line_ids to list of ids, piped with '|'.
             # here we split the string, convert values to int and browse them.
             list_of_ids = self.pipe_list_ids.split('|')
-            list_of_int_ids = map(int, list_of_ids)
+            list_of_int_ids = list(map(int, list_of_ids))
             order_line_ids = SaleOrderLine.browse(list_of_int_ids)
 
         else:

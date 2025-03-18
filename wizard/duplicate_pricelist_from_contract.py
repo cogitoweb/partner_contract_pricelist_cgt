@@ -136,7 +136,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
             # self.pricelist_line_ids to list of ids, piped with '|'.
             # here we split the string, convert values to int and browse them.
             list_of_ids = self.pipe_list_ids.split('|')
-            list_of_int_ids = map(int, list_of_ids)
+            list_of_int_ids = list(map(int, list_of_ids))
             pricelist_line_ids = ProductPriceItem.browse(list_of_int_ids)
 
         # double check - filter out already added lines
@@ -163,7 +163,7 @@ class DuplicatePricelistFromContract(models.TransientModel):
             # self.pricelist_contract_line_ids to list of ids, piped with '|'.
             # here we split the string, convert values to int and browse them.
             list_of_ids = self.pipe_contract_list_ids.split('|')
-            list_of_int_ids = map(int, list_of_ids)
+            list_of_int_ids = list(map(int, list_of_ids))
             pricelist_contract_line_ids = ProductContractPriceItem.browse(list_of_int_ids)
 
         # double check - filter out already added lines
