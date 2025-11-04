@@ -132,18 +132,30 @@ class AnalyticAccount(models.Model):
 
         SaleContractPricelist = self.env['sale.contract.pricelist']
 
-        # check exist product in pricelist
-        exist_product = SaleContractPricelist.search([
-            ('analytic_account_id', '=', self.id),
-            ('product_id', '=', contract_price_line_id.product_id.id)
-        ])
+        product_ids = [contract_price_line_id.product_id.id]
 
-        if exist_product:
-            return exist_product
+        if not product_ids:
+            # cerco per categoria
+            if not contract_price_line_id.categ_id:
+                raise ValidationError('Please set a product or a category in the pricelist line! You cannot use global listings.')
 
-        # create pricelist from price line
-        res = self._create_pricelist_from_contract_price_line(
-            contract_price_line_id
-        )
+            product_ids = self.env['product.product'].search([
+                ('categ_id', 'child_of', contract_price_line_id.categ_id.id)
+            ]).ids
 
-        return res
+        for product_id in product_ids:
+            # check exist product in pricelist
+            exist_product = SaleContractPricelist.search([
+                ('analytic_account_id', '=', self.id),
+                ('product_id', '=', product_id)
+            ])
+
+            if exist_product:
+                continue
+
+            # create pricelist from price line
+            self._create_pricelist_from_contract_price_line(
+                contract_price_line_id
+            )
+
+        return True
