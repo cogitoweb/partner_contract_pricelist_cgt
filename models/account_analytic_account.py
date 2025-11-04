@@ -109,6 +109,9 @@ class AnalyticAccount(models.Model):
 
     @api.multi
     def _create_pricelist_from_contract_price_line(self, contract_price_line):
+
+        _logger.debug("Creating pricelist line from contract price line data: %s", pprint.pformat(contract_price_line))
+
         res = self.env['sale.contract.pricelist'].create({
             'analytic_account_id': contract_price_line['analytic_account_id'],
             'product_id': contract_price_line['product_id'],
