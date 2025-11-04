@@ -38,10 +38,3 @@ class ProductTemplate(models.Model):
                 ('product_id.product_tmpl_id', '=', self.id)
             ]
         }
-
-    # fields
-
-    uos_id = fields.Many2one(
-        'product.uom',
-        'Sale Unit of Measure'
-    )

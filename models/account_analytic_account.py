@@ -108,18 +108,15 @@ class AnalyticAccount(models.Model):
         return res
 
     @api.multi
-    def _create_pricelist_from_contract_price_line(self, contract_price_line):
-
-        _logger.debug("Creating pricelist line from contract price line data: %s", pprint.pformat(contract_price_line))
-
+    def _create_pricelist_from_contract_price_line(self, contract_price_line_id):
         res = self.env['sale.contract.pricelist'].create({
-            'analytic_account_id': contract_price_line['analytic_account_id'],
-            'product_id': contract_price_line['product_id'],
-            'description': contract_price_line['description'],
-            'product_uos_id': contract_price_line['product_uos_id'],
-            'minimum_stock_qty': contract_price_line['minimum_stock_qty'],
-            'sell_price': contract_price_line['sell_price'],
-            'sell_discount': contract_price_line['sell_discount']
+            'analytic_account_id': self.id,
+            'product_id': contract_price_line_id.product_id.id,
+            'description': contract_price_line_id.description,
+            'product_uom_id': contract_price_line_id.product_uom_id.id,
+            'minimum_stock_qty': contract_price_line_id.minimum_stock_qty,
+            'sell_price': contract_price_line_id.sell_price,
+            'sell_discount': contract_price_line_id.sell_discount
         })
 
         return res
@@ -135,42 +132,18 @@ class AnalyticAccount(models.Model):
 
         SaleContractPricelist = self.env['sale.contract.pricelist']
 
-        product_ids = [contract_price_line_id.product_id.id]
+        # check exist product in pricelist
+        exist_product = SaleContractPricelist.search([
+            ('analytic_account_id', '=', self.id),
+            ('product_id', '=', contract_price_line_id.product_id.id)
+        ])
 
-        if not product_ids:
-            # cerco per categoria
-            if not contract_price_line_id.categ_id:
-                raise ValidationError('Please set a product or a category in the pricelist line! You cannot use global listings.')
+        if exist_product:
+            return exist_product
 
-            product_ids = self.env['product.product'].search([
-                ('categ_id', 'child_of', contract_price_line_id.categ_id.id)
-            ]).ids
+        # create pricelist from price line
+        res = self._create_pricelist_from_contract_price_line(
+            contract_price_line_id
+        )
 
-        for product_id in product_ids:
-            # check exist product in pricelist
-            exist_product = SaleContractPricelist.search([
-                ('analytic_account_id', '=', self.id),
-                ('product_id', '=', product_id)
-            ])
-
-            if exist_product:
-                continue
-
-            product = self.env['product.product'].browse(product_id)
-
-            contract_price_line = {
-                'analytic_account_id': self.id,
-                'product_id': product_id,
-                'description': product.name,
-                'product_uos_id': product.uos_id.id,
-                'minimum_stock_qty': contract_price_line_id.minimum_stock_qty or 0,
-                'sell_price': contract_price_line_id.sell_price,
-                'sell_discount': contract_price_line_id.sell_discount
-            }
-
-            # create pricelist from price line
-            self._create_pricelist_from_contract_price_line(
-                contract_price_line
-            )
-
-        return True
+        return res
