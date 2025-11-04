@@ -108,15 +108,15 @@ class AnalyticAccount(models.Model):
         return res
 
     @api.multi
-    def _create_pricelist_from_contract_price_line(self, contract_price_line_id):
+    def _create_pricelist_from_contract_price_line(self, contract_price_line):
         res = self.env['sale.contract.pricelist'].create({
-            'analytic_account_id': self.id,
-            'product_id': contract_price_line_id.product_id.id,
-            'description': contract_price_line_id.description,
-            'product_uom_id': contract_price_line_id.product_uom_id.id,
-            'minimum_stock_qty': contract_price_line_id.minimum_stock_qty,
-            'sell_price': contract_price_line_id.sell_price,
-            'sell_discount': contract_price_line_id.sell_discount
+            'analytic_account_id': contract_price_line['analytic_account_id'],
+            'product_id': contract_price_line['product_id'],
+            'description': contract_price_line['description'],
+            'product_uos_id': contract_price_line['product_uos_id'],
+            'minimum_stock_qty': contract_price_line['minimum_stock_qty'],
+            'sell_price': contract_price_line['sell_price'],
+            'sell_discount': contract_price_line['sell_discount']
         })
 
         return res
@@ -153,9 +153,21 @@ class AnalyticAccount(models.Model):
             if exist_product:
                 continue
 
+            product = self.env['product.product'].browse(product_id)
+
+            contract_price_line = {
+                'analytic_account_id': self.id,
+                'product_id': product_id,
+                'description': product.name,
+                'product_uos_id': product.uos_id.id,
+                'minimum_stock_qty': contract_price_line_id.minimum_stock_qty or 0,
+                'sell_price': contract_price_line_id.sell_price,
+                'sell_discount': contract_price_line_id.sell_discount
+            }
+
             # create pricelist from price line
             self._create_pricelist_from_contract_price_line(
-                contract_price_line_id
+                contract_price_line
             )
 
         return True

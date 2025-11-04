@@ -50,6 +50,12 @@ class SaleContractPricelist(models.Model):
         store=True
     )
 
+    product_uos_id = fields.Many2one(
+        string='Product UoS',
+        comodel_name='product.uom',
+        required=False
+    )
+
     minimum_stock_qty = fields.Integer(
         string='Minimum Stock Quantity',
         group_operator='avg'
