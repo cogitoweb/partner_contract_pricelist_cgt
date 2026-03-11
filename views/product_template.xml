@@ -11,9 +11,12 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//div[@name='button_box']" position="inside">
-                    <button class="oe_stat_button" name="action_view_contract_lines" type="object" icon="fa-usd" 
+                    <button class="oe_stat_button" name="action_view_contract_lines" type="object" icon="fa-usd"
                         attrs="{'invisible': [('sale_ok', '=', False)]}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value"><field name="contract_line_count"/></span>
                             <span class="o_stat_text">Contract lines</span>
+                        </div>
                     </button>
                 </xpath>
 

@@ -16,6 +16,23 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
 
+    # Computed fields
+
+    @api.multi
+    def _compute_contract_line_count(self):
+        SaleContractPricelist = self.env['sale.contract.pricelist']
+        for record in self:
+            product_ids = record.with_context(active_test=False).product_variant_ids.ids
+            record.contract_line_count = SaleContractPricelist.search_count([
+                ('analytic_account_id.active', '=', True),
+                ('product_id', 'in', product_ids)
+            ])
+
+    contract_line_count = fields.Integer(
+        string='Contract lines',
+        compute='_compute_contract_line_count',
+    )
+
     # Action methods
 
     @api.multi
