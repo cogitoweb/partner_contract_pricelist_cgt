@@ -39,10 +39,13 @@ class PricelistSaleOrder(models.Model):
                 _("Order should be confirmed before creating contract.")
             )
 
-        # you already done this!
-        if self.contract_id:
+        # already linked to an active contract: block and ask to delete it
+        # if the linked contract is archived (active=False), proceed and
+        # overwrite the link with the new contract
+        if self.contract_id and self.contract_id.active:
             raise ValidationError(
-                _("Contract has already been generated from this order.\n%s")
+                _("Contract has already been generated from this order:\n%s\n"
+                  "Delete the existing contract before regenerating.")
                 % (self.contract_id.name)
             )
 

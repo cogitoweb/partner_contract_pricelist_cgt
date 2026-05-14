@@ -105,12 +105,14 @@ msgid "Contract"
 msgstr "Contratto"
 
 #. module: partner_contract_pricelist_cgt
-#: code:addons/partner_contract_pricelist_cgt/models/sale_order.py:45
+#: code:addons/partner_contract_pricelist_cgt/models/sale_order.py:47
 #, python-format
-msgid "Contract has already been generated from this order.\n"
-"%s"
+msgid "Contract has already been generated from this order:\n"
+"%s\n"
+"Delete the existing contract before regenerating."
 msgstr "Esiste già un contratto generato da questo ordine:\n"
-"%s"
+"%s\n"
+"Elimina il contratto esistente prima di rigenerarlo."
 
 #. module: partner_contract_pricelist_cgt
 #: model:ir.ui.menu,name:partner_contract_pricelist_cgt.sale_contract_pricelist_menu
