@@ -69,6 +69,14 @@ class PricelistSaleOrder(models.Model):
         # override name
         new_contract.name = new_contract.generate_contract_name(new_contract.id)
 
+        # at this point we are regenerating from scratch (the validator above
+        # ensures self.contract_id is False or archived). Reset ALL stale
+        # pricelist_id links on order lines so add_pricelist_from_sale_order_line
+        # will create new rows instead of silently skipping them.
+        linked_lines = self.order_line.filtered('pricelist_id')
+        if linked_lines:
+            linked_lines.write({'pricelist_id': False})
+
         # copy order lines as contract pricelist lines
         for order_line in self.order_line:
             x = new_contract.add_pricelist_from_sale_order_line(order_line)
