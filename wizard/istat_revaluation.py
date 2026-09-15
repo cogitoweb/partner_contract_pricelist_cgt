@@ -53,7 +53,7 @@ class PricelistApplyIstatRevaluation(models.TransientModel):
                 continue
 
             # already done for this target year
-            if contract.istat_revaluation_year >= self.target_year:
+            if contract.istat_revaluation_year >= int(self.target_year):
                 continue
 
             # loop on pricelist
@@ -66,7 +66,7 @@ class PricelistApplyIstatRevaluation(models.TransientModel):
                 )
 
             # set last execution year/percentage
-            contract.istat_revaluation_year = self.target_year
+            contract.istat_revaluation_year = int(self.target_year)
             contract.istat_revaluation_percentage = self.target_percentage
 
         # compose message
